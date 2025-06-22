@@ -1,0 +1,153 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eab3e0d03d6469b408b9ae52ba1f795e, type: 3}
+  m_Name: GameSettings
+  m_EditorClassIdentifier: 
+  m_app:
+    privacyUrl: 
+    facebookUrl: 
+    helpMailAddress: 
+    screenShotFileName: Temp_ScreenShotName.png
+    galleryFileName: ScreenShotName.png
+    icloudPlayedTime: 
+    iosRestoreAllData: 
+    cloudFileName: 
+  m_oneAdMaxScheduleTime: 5
+  m_graphic:
+    autoQualities: []
+  m_radialGainItemEvent:
+    speed: 10
+    eventCount: 10
+    runDelay: {x: 0.1, y: 0.3}
+    radialLength: {x: 0.1, y: 0.3}
+    radialAxis: {x: 0, y: 0, z: -1}
+    radialSmoothTime: 0.1
+    radialMoveEndWait: 0.5
+  m_gainItemEvent:
+    speed: 10
+    randAngle: 1
+    baseCurrencyCount: 1
+    centerPositionRate: 0
+  m_common:
+    gradeColor:
+      Normal: {r: 0, g: 0, b: 0, a: 0}
+      Rare: {r: 0, g: 0, b: 0, a: 0}
+      Epic: {r: 0, g: 0, b: 0, a: 0}
+      Legend: {r: 0, g: 0, b: 0, a: 0}
+      Ultimate: {r: 0, g: 0, b: 0, a: 0}
+      Mythic: {r: 0, g: 0, b: 0, a: 0}
+    upgradeGradeColor:
+      Normal: {r: 0, g: 0, b: 0, a: 0}
+      Rare: {r: 0, g: 0, b: 0, a: 0}
+      Epic: {r: 0, g: 0, b: 0, a: 0}
+      Legend: {r: 0, g: 0, b: 0, a: 0}
+      Ultimate: {r: 0, g: 0, b: 0, a: 0}
+      Mythic: {r: 0, g: 0, b: 0, a: 0}
+  m_collection:
+    enableLevelUpGaugeBarColor: {r: 0, g: 1, b: 0, a: 1}
+    disableLevelUpGaugeBarColor: {r: 1, g: 1, b: 1, a: 1}
+  m_stage:
+    adjustFovToFitScreenResolution:
+      baseScreenWidth: 720
+      baseScreenHeight: 1280
+      baseFov: 28
+      baseSize: 6
+    uiSyncBoundaryHeight: 0.1
+    planetRotationSpeed: 2
+    maxPollutionParticleStartSize: 300
+    menuObjectMoveTime: 0.5
+    stageCompleteEvent:
+      uiFadeInTime: 0.3
+      uiFadeOutTime: 0.3
+  m_skill:
+    updateTime: 0.1
+    triggerUpdateTime: 0.1
+  m_ui:
+    collectionInfo:
+      selfCloseTime: 5
+      modelRotationSpeed: 20
+    currency:
+      notEnoughColor: {r: 1, g: 0.4313726, b: 0.4039216, a: 1}
+      gemTextColor: {r: 0.54509807, g: 0.30980393, b: 0.77254903, a: 1}
+      goldTextColor: {r: 0.7019608, g: 0.45882353, b: 0.105882354, a: 1}
+    objectUpgrade:
+      abilityNameAppliedColorByLab: {r: 0, g: 0, b: 1, a: 1}
+  m_booster:
+    maxMainBoosterRemainTime: 43200
+  m_buttonEventIntervalWeight: 0.98
+  m_minButtonEventInterval: 0.98
+  m_cameraTransforms: []
+  m_cameraSettingStageId: 101
+  m_cameraScrollMaxTopPositionZValue: 5
+  m_cameraScrollMinBottomPositionZValue: 0
+  m_work:
+    restaurant:
+      screenFadeInTime: 2
+      InvestorGemCount: 9
+      delayNpcLoadTime_straight: 3
+      delayNpcLoadTime_across: 15
+      delayNpcLoadTime_etc: 30
+      straghtPassersbyMaxCount: 3
+      acrossPassersbyMaxCount: 1
+      perfectFoodTextColor: {r: 0.8509804, g: 0.6, b: 0.10980392, a: 1}
+    invest:
+      GoldlineColor: {r: 1, g: 0.7490196, b: 0, a: 1}
+      GoldStarColor: {r: 1, g: 0.7490196, b: 0, a: 1}
+      GemlineColor: {r: 1, g: 0, b: 1, a: 1}
+      GemStarColor: {r: 1, g: 0, b: 1, a: 1}
+    result:
+      resultText:
+        waitTime: 0.3
+      rewardPanel:
+        waitTime: 1
+      inactiveNormalPlanetTextWaitTime: 1
+      defeatTipWaitTime: 1
+      buttonShowTime: 1
+    bulletDefaultRacycastMaxDistance: 20
+    cameraShake:
+      criticalDamage:
+        intensity: 0
+        time: 0
+        shakeCurve:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+      deadMercenary:
+        intensity: 0
+        time: 0
+        shakeCurve:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+      alienRush:
+        intensity: 0
+        time: 0
+        shakeCurve:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+      nuclearExplosions: []
+    deadMotionTime: 1.5
+    dragAndDropInfoShowTime: 3
+    maxSpeedMultiplier: 550
+    itemMultiplierWeight: 1
+    maxSpeed: 11
+  m_beachTypeMapIds: 
+  m_snowTypeMapIds: 
+  m_shopGoldFoodMulpliers: 
+  m_shopGoldDefaultValue: 135
