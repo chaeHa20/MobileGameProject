@@ -1,7 +1,7 @@
 # MobileGameProject
 유니티 기반 모바일 게임 프로젝트 AOS, 팀명 미정
 
-2025-06-28 프로젝트 베이스 작업 중
+2025-06-28 프로젝트 베이스 작업 내용
 entity - ability entity - character
 entity - ability entity - player 분리
 
