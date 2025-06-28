@@ -6,7 +6,7 @@ using System.IO;
 
 namespace UnityHelper
 {
-    public partial class FileHelper
+    public class FileHelper
     {
         public static string makeDataPath(string filename)
         {

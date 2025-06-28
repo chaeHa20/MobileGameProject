@@ -151,19 +151,6 @@ public class GameSettings : BaseGameSettings
     public class Working
     {
         [Serializable]
-        public class RestaurantWork
-        {
-            public float screenFadeInTime = 2.0f;
-            public float InvestorGemCount = 9.0f;
-            public float delayNpcLoadTime_straight = 3.0f;
-            public float delayNpcLoadTime_across = 15.0f;
-            public float delayNpcLoadTime_etc = 30.0f;
-            public int straghtPassersbyMaxCount = 3;
-            public int acrossPassersbyMaxCount = 1;
-            public Color perfectFoodTextColor = new Color(217.0f / 255.0f, 153.0f / 255.0f, 28.0f / 255.0f);
-        }
-
-        [Serializable]
         public class EventWork
         {
             public Color GoldlineColor = new Color(1.0f, 191.0f / 255.0f, 0.0f);
@@ -226,14 +213,8 @@ public class GameSettings : BaseGameSettings
             }
 
             public Data criticalDamage = new Data();
-            public Data deadMercenary = new Data();
-            // TODO : 2024-02-28 update by pms
-            public Data alienRush = new Data();
-            //
-            public List<Data> nuclearExplosions = new List<Data>();
         }
 
-        public RestaurantWork restaurant = new RestaurantWork();
         public EventWork invest = new EventWork();
         public Result result = new Result();
         public float bulletDefaultRacycastMaxDistance = 20.0f;
@@ -281,11 +262,6 @@ public class GameSettings : BaseGameSettings
         public ObjectUpgrade objectUpgrade = new ObjectUpgrade();
     }
 
-    [Serializable]
-    public class Booster
-    {
-        public int maxMainBoosterRemainTime = 43200;
-    }
 
     [Serializable]
     public class CameraTransform
@@ -308,7 +284,6 @@ public class GameSettings : BaseGameSettings
     [SerializeField] MainStage m_stage = new MainStage();
     [SerializeField] Skill m_skill = new Skill();
     [SerializeField] UI m_ui = new UI();
-    [SerializeField] Booster m_booster = new Booster();
     [SerializeField] float m_buttonEventIntervalWeight = 0.98f;
     [SerializeField] float m_minButtonEventInterval = 0.98f;
     [SerializeField] List<CameraTransform> m_cameraTransforms = new List<CameraTransform>();
@@ -316,12 +291,9 @@ public class GameSettings : BaseGameSettings
     [SerializeField] float m_cameraScrollMaxTopPositionZValue = 5.0f;
     [SerializeField] float m_cameraScrollMinBottomPositionZValue = 0.0f;
     [SerializeField] Working m_work = new Working();
-    [SerializeField] List<int> m_beachTypeMapIds = new List<int>();
-    [SerializeField] List<int> m_snowTypeMapIds = new List<int>();
-    [SerializeField] List<int> m_shopGoldFoodMulpliers = new List<int>();
     [SerializeField] int m_shopGoldDefaultValue = 135;
+    [SerializeField] float m_defaultAttackTime = 2.0f;
 
-    public int oneAdMaxScheduleTime => m_oneAdMaxScheduleTime;
     public Graphic graphic => m_graphic;
     public RadialGainItemEvent radialGainItemEvent => m_radialGainItemEvent;
     public GainItemEvent gainItemEvent => m_gainItemEvent;
@@ -331,7 +303,6 @@ public class GameSettings : BaseGameSettings
 
     public Skill skill => m_skill;
     public UI ui => m_ui;
-    public Booster booster => m_booster;
     public float buttonEventIntervalWeight => m_buttonEventIntervalWeight;
     public float minButtonEventInterval => m_minButtonEventInterval;
     public List<CameraTransform> cameraTransformSettings => m_cameraTransforms;
@@ -340,10 +311,8 @@ public class GameSettings : BaseGameSettings
     public float cameraScrollMinBottomPositionZValue => m_cameraScrollMinBottomPositionZValue;
     public Working work => m_work;
 
-    public List<int> beachTypeMapIds => m_beachTypeMapIds;
-    public List<int> snowTypeMapIds => m_snowTypeMapIds;
-    public List<int> shopGoldFoodMulpliers => m_shopGoldFoodMulpliers;
     public int shopGoldDefaultValue => m_shopGoldDefaultValue;
+    public float defaultAttackTime => m_defaultAttackTime;
 
 #if UNITY_EDITOR
     [MenuItem("Settings/GameSettings")]

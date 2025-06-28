@@ -13,6 +13,7 @@ public class Req_Login : Req_LocalData
     public Req_Login()
     {
         m_pid = (int)eLocalProtocol.Login;
+        m_dataType = eLocalData.User;
     }
 }
 
@@ -27,6 +28,7 @@ public class Req_GetGameOption : Req_LocalData
     public Req_GetGameOption()
     {
         m_pid = (int)eLocalProtocol.GetGameOption;
+        m_dataType = eLocalData.Game;
     }
 }
 
@@ -42,6 +44,7 @@ public class Req_SetGameOption : Req_LocalData
     public Req_SetGameOption()
     {
         m_pid = (int)eLocalProtocol.SetGameOption;
+        m_dataType = eLocalData.Game;
     }
 }
 
@@ -55,6 +58,7 @@ public class Req_GetCurrency : Req_LocalData
     public Req_GetCurrency()
     {
         m_pid = (int)eLocalProtocol.GetCurrency;
+        m_dataType = eLocalData.Currency;
     }
 }
 
@@ -72,6 +76,7 @@ public class Req_UseCurrency : Req_LocalData
     public Req_UseCurrency()
     {
         m_pid = (int)eLocalProtocol.UseCurrency;
+        m_dataType = eLocalData.Currency;
     }
 }
 
@@ -91,6 +96,7 @@ public class Req_BuyCurrency : Req_LocalData
     public Req_BuyCurrency()
     {
         m_pid = (int)eLocalProtocol.BuyCurrency;
+        m_dataType = eLocalData.Currency;
     }
 }
 
@@ -109,6 +115,7 @@ public class Req_AddRewardItems : Req_LocalData
     public Req_AddRewardItems()
     {
         m_pid = (int)eLocalProtocol.AddRewardItems;
+        m_dataType = eLocalData.Item;
     }
 }
 
@@ -125,6 +132,7 @@ public class Req_AddCurrency : Req_LocalData
     public Req_AddCurrency()
     {
         m_pid = (int)eLocalProtocol.AddCurrency;
+        m_dataType = eLocalData.Currency;
     }
 }
 
@@ -138,6 +146,7 @@ public class Req_GetLocalAd : Req_LocalData
     public Req_GetLocalAd()
     {
         m_pid = (int)eLocalProtocol.GetAdData;
+        m_dataType = eLocalData.Ad;
     }
 }
 
@@ -153,6 +162,7 @@ public class Req_GetAllItems : Req_LocalData
     public Req_GetAllItems()
     {
         m_pid = (int)eLocalProtocol.GetAllItems;
+        m_dataType = eLocalData.Item;
     }
 }
 
@@ -168,6 +178,7 @@ public class Req_GetPlayerInfo : Req_LocalData
     public Req_GetPlayerInfo()
     {
         m_pid = (int)eLocalProtocol.GetPlayerInfo;
+        m_dataType = eLocalData.Player;
     }
 }
 
@@ -183,6 +194,7 @@ public class Req_GetQuest : Req_LocalData
     public Req_GetQuest()
     {
         m_pid = (int)eLocalProtocol.GetQuest;
+        m_dataType = eLocalData.Quest;
     }
 }
 
@@ -199,6 +211,7 @@ public class Req_UpdateQuest : Req_LocalData
     public Req_UpdateQuest()
     {
         m_pid = (int)eLocalProtocol.UpdateQuest;
+        m_dataType = eLocalData.Quest;
     }
 }
 
@@ -212,6 +225,7 @@ public class Req_GetAllQuests : Req_LocalData
     public Req_GetAllQuests()
     {
         m_pid = (int)eLocalProtocol.GetAllQuest;
+        m_dataType = eLocalData.Quest;
     }
 }
 
@@ -226,6 +240,7 @@ public class Req_DailyReset : Req_LocalData
     public Req_DailyReset()
     {
         m_pid = (int)eLocalProtocol.DailyReset;
+        m_dataType = eLocalData.User;
     }
 }
 
@@ -240,6 +255,7 @@ public class Req_GetTutorial : Req_LocalData
     public Req_GetTutorial()
     {
         m_pid = (int)eLocalProtocol.GetTutorial;
+        m_dataType = eLocalData.Tutorial;
     }
 }
 
@@ -255,6 +271,7 @@ public class Req_CompleteTutorial : Req_LocalData
     public Req_CompleteTutorial()
     {
         m_pid = (int)eLocalProtocol.CompleteTutorial;
+        m_dataType = eLocalData.Tutorial;
     }
 }
 
@@ -267,6 +284,7 @@ public class Req_GetAllTutorials : Req_LocalData
     public Req_GetAllTutorials()
     {
         m_pid = (int)eLocalProtocol.GetAllTutorial;
+        m_dataType = eLocalData.Tutorial;
     }
 }
 
@@ -282,6 +300,7 @@ public class Req_ReceiveQuestReward : Req_LocalData
     public Req_ReceiveQuestReward()
     {
         m_pid = (int)eLocalProtocol.ReceiveQuestReward;
+        m_dataType = eLocalData.Quest;
     }
 }
 
@@ -299,6 +318,7 @@ public class Req_ReceiveAllQuestReward : Req_LocalData
     public Req_ReceiveAllQuestReward()
     {
         m_pid = (int)eLocalProtocol.ReceiveAllQuestReward;
+        m_dataType = eLocalData.Quest;
     }
 }
 
@@ -316,6 +336,7 @@ public class Req_GetNoAds : Req_LocalData
     public Req_GetNoAds()
     {
         m_pid = (int)eLocalProtocol.GetNoAds;
+        m_dataType = eLocalData.Ad;
     }
 }
 
@@ -329,6 +350,7 @@ public class Req_SetNoAds : Req_LocalData
     public Req_SetNoAds()
     {
         m_pid = (int)eLocalProtocol.SetNoAds;
+        m_dataType = eLocalData.Ad;
     }
 }
 
@@ -344,14 +366,10 @@ public class Req_SetSocialId : Req_LocalData
     public Req_SetSocialId()
     {
         m_pid = (int)eLocalProtocol.SetSocialId;
+        m_dataType = eLocalData.Player;
     }
 }
 
 public class Res_SetSocialId : Res_LocalData
 {
-}
-
-public class Res_UpgradeEquipmentItem : Res_GameData
-{
-    public LocalItem item;
 }

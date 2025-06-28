@@ -27,8 +27,6 @@ public class LocalAbility
     private static void initAbilityValueTypes()
     {
         abilityValueTypes = new Dictionary<eAbility, LocalValue.eValue>();
-
-        // abilityValueTypes.Add(eAbility.ChangeResource, LocalValue.eValue.Int);
     }
 
     public static LocalValue.eValue abilityTypeToValueType(eAbility abilityType)

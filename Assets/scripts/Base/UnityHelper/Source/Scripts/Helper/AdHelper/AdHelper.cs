@@ -197,6 +197,8 @@ namespace UnityHelper
             return eDevice.Android;
 #elif UNITY_IOS
             return eDevice.Ios;
+#else
+            return eDevice.Window;
 #endif
         }
 

@@ -14,6 +14,7 @@ public class LocalProtocolDailyReset : GameLocalProtocol
         if (userData.isDailyLogin(gameSettingTable.getValueInt(GameSettingRow.eType.ResetTime)))
         {
             GameLocalDataHelper.instance.setDailyReset();
+            GameLocalDataHelper.instance.saveUsedDatas();
         }
 
         userData.login(out bool isFirstAppStart);

@@ -84,6 +84,8 @@ public class GameLocalProtocol : LocalDataProtocol
             var currencyType = (eCurrency)itemRow.subType;
             addCurrency(currencyType, value, out LocalBigMoneyItem currency);
             result.addCurrency(currencyType, currency, value);
+
+            GameLocalDataHelper.instance.saveUsedDatas(eLocalData.Currency);
         }
         else if (eItem.Equipment == itemRow.mainType)
         {

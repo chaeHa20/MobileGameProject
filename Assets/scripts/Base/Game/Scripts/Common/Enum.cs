@@ -102,6 +102,7 @@ public enum eResource
     None,
     UIGameToastMsg = 1001,
     UISynthesisReturnCurrencyToastMsg = 1002,
+    UIPlayerHealthItem = 1003,
 }
 
 public enum eUIMessage
@@ -167,6 +168,31 @@ public enum eVibration
     None = 0,
 }
 
+public enum eAttackType
+{
+    None = 0,
+    Melee = 1,
+    Ranged = 2,
+}
+
+public enum eFireMachineType
+{
+    None = 0,
+    Bow = 1,
+    CrossBow = 2,
+    Pistol = 3,
+    Rifle = 4,
+}
+
+public enum eBulletType
+{
+    None = 0,
+    Arrow = 1,
+    Bullet = 2,
+}
+
+
+
 public enum eTutorialOpen
 {
     None = 0,
@@ -189,12 +215,21 @@ public enum eShopPackage
 public enum eAbility
 {
     None = 0,
+    MaxHealth = 1,
+    MoveSpeed = 2,
+    AttackSpeed = 3,
+    AttackPower = 4,
+    AttackCount = 5,
+    AttackPerTime = 6,
+    CriticalProbability = 7,
+    CriticalDamagePercent = 8,
 }
 
 public enum eAbilityOwner
 {
-    None,
-    Player,
+    None = 0,
+    Player = 1,
+    Character = 2,
 }
 
 public enum eEquipment

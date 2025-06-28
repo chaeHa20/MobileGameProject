@@ -6,6 +6,7 @@ namespace UnityHelper
 {
     public enum eDevice
     {
+        Window = 0,
         Android,
         Ios
     }

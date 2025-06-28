@@ -20,7 +20,7 @@ public class GoalPathMove : GoalMove
         if (isEnd)
             return;
 
-        search(entityUuid, movePosition);
+        search(entityUuid, destination.transform);
 
         initDatas(entityUuid);
     }
@@ -34,7 +34,7 @@ public class GoalPathMove : GoalMove
     {
         base.resume(id, entityUuid, ref isEnd);
 
-        search(entityUuid, movePosition);
+        search(entityUuid, destination.transform);
     }
 
     public override void finalize(long entityUuid)

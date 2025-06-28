@@ -14,6 +14,7 @@ public class ProtocolLogin : GameLocalProtocol
         {
             isDailyLogin = true;
             GameLocalDataHelper.instance.setDailyReset();
+            GameLocalDataHelper.instance.saveUsedDatas();
         }
 
         userData.login(out bool isFirstAppStart);

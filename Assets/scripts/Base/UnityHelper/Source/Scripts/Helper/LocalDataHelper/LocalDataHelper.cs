@@ -89,13 +89,13 @@ namespace UnityHelper
                     {
                         if (protocol.isSaveData)
                         {
-                            saveUsedDatas();
+                            saveUsedDatas(req.dataType);
                             saveIosRestoreDatas(req.pid);
                         }
                         // 디버깅 때문에 OnApplicationQuit()가 호출 안되는 경우가 있다.
                         else if (Debugx.isActive)
                         {
-                            saveUsedDatas();
+                            saveUsedDatas(req.dataType);
                         }
                     }
                     else
@@ -232,6 +232,19 @@ namespace UnityHelper
             return JsonHelper.toJson(nodes, crypto);
         }
 
+        public void saveUsedDatas(eLocalData dataType)
+        {
+            if (m_datas.TryGetValue(dataType.ToString(), out LocalData data))
+            {
+                if (data.isUsed)
+                {
+                    data.isUsed = false;
+                    data.serialize();
+                    setPlayerPrefsData(data);
+                }
+            }
+        }// 모든 데이터를 매번 저장시 부하 있을 수 있어 필요 데이터만 따로 저장
+
         public void saveUsedDatas()
         {
             foreach (var pair in m_datas)
@@ -244,7 +257,7 @@ namespace UnityHelper
                     setPlayerPrefsData(data);
                 }
             }
-        }
+        }// 모든 데이터 저장
 
         public void setDailyReset()
         {

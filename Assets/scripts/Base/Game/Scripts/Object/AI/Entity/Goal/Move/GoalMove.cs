@@ -72,7 +72,7 @@ public class GoalMove : Goal
             character.setModelLayer();
             character.setAbleAIRotate();
             character.updateCharacterMoveSpeed();
-            character.setTargetPoint(destination.transform);
+            character.setNavMeshPath(destination.transform);
             character.characterModel.setAnimSpeed();
         }
     }
@@ -88,8 +88,11 @@ public class GoalMove : Goal
         character.position2 = Vector2.Lerp(character.position2, targetPosition, dt);
     }
 
-    protected virtual void search(long entityUuid, Vector2 movePosition)
+    protected virtual void search(long entityUuid, Transform target)
     {
+        Character character = getEntity<Character>(entityUuid);
+
+        character.setNavMeshPath(target);
     }
 
 

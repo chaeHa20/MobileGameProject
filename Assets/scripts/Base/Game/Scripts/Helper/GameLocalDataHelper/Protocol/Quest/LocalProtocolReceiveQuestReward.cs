@@ -28,6 +28,8 @@ public class LocalProtocolReceiveQuestReward : GameLocalProtocol
             var currencyType = (eCurrency)itemRow.subType;
             addCurrency(currencyType, rewardValue.value, out currency);
             result.addCurrency(currencyType, currency, rewardValue.value);
+
+            GameLocalDataHelper.instance.saveUsedDatas(eLocalData.Currency);
         }
         else
             addItem(questRow.rewardItemId, rewardValue.value, false, result);

@@ -5,16 +5,8 @@ public enum eLocalData
     Item,
     Currency,
     Game,
-    Boost,
-    Catalog,
-    PackageShops,// TODO : 2024-07-04 by pms
     Ad,
-    MapContainer,
-    Collection,
     Player,
-    RestaurantUpgrade,
-    SafeAbility,
-    GameSkill,
     Tutorial,
     Quest,
 }

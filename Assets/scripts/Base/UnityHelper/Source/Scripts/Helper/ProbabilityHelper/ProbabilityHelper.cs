@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace UnityHelper
 {
-    public  partial class ProbabilityHelper
+    public  class ProbabilityHelper
     {
         public class Selector
         {

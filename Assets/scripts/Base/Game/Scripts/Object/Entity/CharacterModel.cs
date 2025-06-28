@@ -4,14 +4,6 @@ using UnityEngine;
 using UnityHelper;
 using System;
 
-/*
- * m_battleVsWindowPosition 설정 방법
- * 1. NormalPlanet Scene의 Canvas(Medium)/SareArea에 UIBattleVsWindow 연다
- * 2. UIBattleVsWindow Alien Team 또는 Our Team Entity에 모델 프리팹을 연다.
- * 3. 모델의 Layer를 UI로 변경한다.
- * 4. Entity에 LocalScale, LocalPosition, LocalRoatation을 조절한다.
- * 5. Entity에 LocalScale, LocalPosition, LocalRoatation 값을 모델 프리팹을 따로 열어서 m_battleVsWindowPosition 직접 설정한다.
- */
 public class CharacterModel : EntityModel
 {
     [SerializeField] GameObject m_gaugeHudPosition = null;    
