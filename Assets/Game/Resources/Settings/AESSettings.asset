@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: AESSettings
   m_EditorClassIdentifier: 
   table:
-    iv: 
-    key: 
+    iv: 'FXD0L6xckggAe7Z+WKDikA== '
+    key: 'Gp12aOvPOvD4My3trRtoqE1PfBDT0u0r6LvgBJMM3lw= '
   localData:
-    iv: 
-    key: 
+    iv: '3p4ubxh3YroA3SdKpRqrgg== '
+    key: 'nKBEJeiWhmqTn0+deOYYTFyIi2FEakLWTZLYdRhpDGQ= '

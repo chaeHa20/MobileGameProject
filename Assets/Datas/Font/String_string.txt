@@ -1,0 +1,469 @@
+text_17
+Copyright (C) 2025 NEXELON all rights reserved
+Caricamento...
+Gatto Chef
+Errore di sistema
+Errore di sistema
+{0} è insufficiente
+{0} è insufficiente. Vuoi acquistare?
+Oro
+Gemma
+ x2 Prendi
+Regalo di Tamu
+Un regalo da Tamu!
+{0:00}h {1:00}m
+{0}m {1}s
+{0:00}h {1:00}m {2:00}s
+{0}m
+{0}s
+{0:0.0}s
+X{0}
+OK
+Migliora
+Muovi
+Lv.{0}
+Lv{0}/{1}
+{0}%
+Equipaggia
+Rimuovi
+Adatta
+Max
+X{0}
+{0}/{1}
+Booster X{0:0.0}
+Sicuro
+Inizio
+Bonus
+Tavolo da lavoro +1
+Entrate X2
+Ricevi
+Conferma acquisto
+Ottenuto
+Prima dell'acquisto
+Dopo l'acquisto
+Preparazione...
+Cambia grafica
+Il gioco si riavvierà cambiando grafica.
+Oro offline
+Guadagni oro offline:
+Tempo max ricompensa offline:
+Sblocca
+Livello {0}
+Opzioni
+Lingua
+Coreano
+Risoluzione dello schermo
+Basso
+Medio
+Alto
+Impostazioni
+Vibrazione
+BGM
+SFX
+Salva dati
+Carica dati
+Salva dati
+Salvataggio in corso. I dati salvati precedenti verranno sovrascritti. \nVuoi continuare?
+Dati salvati con successo.
+Carica dati di gioco
+Il progresso attuale non verrà salvato. \nVuoi caricare i dati?
+Dati caricati con successo. \nRiavviando il gioco.
+Nessun dato salvato trovato.
+Accesso fallito: {0}
+Caricamento dati fallito.
+Avviso di accesso
+Accesso a Google Play richiesto.
+Accesso a Game Center richiesto.
+Guida
+C'è un nuovo aggiornamento.\nVuoi aggiornarlo?
+Ripristina Acquisti
+Non ci sono dati da recuperare.
+Abilità
+Promozione cibo
+La probabilità di ordini per il cibo selezionato aumenterà.
+Seleziona
+Seleziona cibo
+Inizio
+Pausa
+Ristruttura
+Migliora il tuo ristorante!
+Attuale
+Successivo
+Ricompensa
+Migliora tutte le stazioni di cibo a Lv. <color=#ffaa4e><b>{0}</b></color>
+Ristrutturazione...
+Muovi nell'area successiva
+Questo è l'ultimo stadio.
+Prossimamente
+Possibilità che il cliente lasci una mancia {0}%
+Valore del booster pubblicitario X{0} aumentato
+Probabilità gemma Tamu {0}%
+Tempo massimo di ricompensa offlineX{0} aumentato
+Velocità dell'ordine del cliente X{0}</b></color> aumentata
+Durata del booster pubblicitario X{0} aumentata
+Valore della mancia X{0} aumentato
+Valore offline X{0} aumentato
+Velocità di movimento del cliente X{0} aumentata
+Apri Scatola
+Apri 1
+Apri Tutto
+Potenziamenti
+Totale
+Informazioni sulle statistiche
+Aumento del fatturato totale
+Aumento del fatturato degli oggetti equipaggiati
+Aumento del fatturato del gatto part-time
+<b>Le statistiche del gatto part-time si applicano anche quando non sono equipaggiati.</b>
+Informazioni sulle statistiche del personaggio
+Aumento del fatturato delle vendite di cibo del gatto manager
+<b>Le statistiche del gatto manager si applicano anche quando non sono equipaggiati.</b>
+Abilità aggiuntive dell'oggetto equipaggiato
+Applicate
+<color=green><b>Più gatti, più profitto!</b></color>
+<color=green><b>Più gatti dello staff, più profitto!</b></color>
+Ingredienti pronti!\nMiao, è ora di vendere!
+Ricompensa offline massima!\nMiao, tutto il cibo è venduto!
+Tutto il cibo venduto!\nMiao, tutto ciò che era pronto è andato!
+Ingredienti pronti, miao!\nI gatti commessi ti mancano!
+Comune
+Raro
+Epico
+Leggendario
+Ultimo
+Mitico
+Aumento della velocità di produzione del cibo del gatto manager <color=#1bbd7e><b>+{0}%</b></color>
+Aumento della probabilità di completamento immediato della produzione del cibo del gatto manager <color=#1bbd7e><b>+{0}%</b></color>
+Aumento della probabilità di creazione perfetta del cibo del gatto manager <color=#1bbd7e><b>+{0}%</b></color>
+Aumento della velocità di movimento del gatto manager <color=#1bbd7e><b>+{0}%</b></color>
+Aumento della velocità di produzione del cibo di tutto il personale <color=#1bbd7e><b>+{0}%</b></color>
+Aumento della probabilità di completamento immediato della produzione del cibo di tutto il personale <color=#1bbd7e><b>+{0}%</b></color>
+Aumento della probabilità di creazione perfetta del cibo di tutto il personale <color=#1bbd7e><b>+{0}%</b></color>
+Aumento della velocità di movimento di tutto il personale <color=#1bbd7e><b>+{0}%</b></color>
+Ttya..Ttyuuttyai\n​Ttyattya Uttyaya!
+Voglio tornare a casa...
+zzzZZZ...
+Sbadiglio~\nMiaooo…
+Fai pure con calma~\nIo mi rotolo qui un po’~
+Miaaaao... Aspettare è anche una virtù felina.
+Miaoo... Ancora no?\nSto perdendo il pelo ad aspettare!
+Bevande zero calorie\nnon ce ne sono per gatti?
+I clienti gatti\nsono pazienti e adorabili, miao…
+La mia coda\nsta mandando segnali di fame…
+Anche mentre aspetto,\nil profumo qui è delizioso, miao…
+Solo questo pasto...\nDa domani dieta, miao!
+Va tutto bene...\nFai pure con calma, miao!
+Voglio andare in vacanza, miao!
+Negozio
+Guadagni illimitati x2
+Potenziante {0:0}x
+Vantaggi esclusivi premium
+Offerta speciale
+Scatola dell'equipaggiamento
+Oro & Potenziatore
+{0} oggetto
+Limite di acquisto: {0} volte
+※Gatto Manager ottenuto subito dopo l'acquisto
+※Gatto Assistente ottenuto subito dopo l'acquisto
+Ricompensa preregistrazione
+{0} Ottenuto
+Ricevuti {0} gemme
+1. Completa il livello 3 di Central Park per ottenere!
+Scrigno Normale
+Scrigno Raro
+Scrigno Epico
+Info Prodotto
+Boost Speciale
+Pacchetto Gatto Manager <Moka>
+Pacchetto Gatto Assistente <Minyu>
+Attiva
+Pacchetto Iniziale 1
+Tutti i cibi
+Limonaata ai mirtilli
+Soda
+Hot Dog
+Patatine fritte
+Gelato morbido
+Caffè
+Torta
+Panino
+Biscotto
+Hamburger
+Taco
+Torta adorabile
+Miscela ai frutti
+Parfait
+Pasta
+Pancake
+Bistecca
+Piatto di formaggio
+ Condizioni della Prossima Area
+Parco Centrale
+Parco Hyde
+Spiaggia Paradiso
+Parco Alaska
+Chiosco di succo
+Chiosco di caffè
+Aid Booth
+Chiosco di hot dog
+Chiosco di gelato
+Chiosco Taco
+Chiosco di gelato
+Chiosco di panini
+Chiosco Pancake
+Caffè di birra
+Caffè di torta
+Punto Burger
+Hamburger Pang
+Fry Pang
+Caffè Brisa
+Caffè
+Casa Taco
+Caffè Maria
+Casa Bistecca
+Casa Brunch
+Cucina da spiaggia
+한국어
+English
+日本語
+中文
+台語/臺語
+Tiếng Việt
+ภาษาไทย
+Русский
+Bahasa Indonesia
+Español
+Português
+Deutsch
+Türkçe
+हिंदी
+Français
+Bahasa Melayu
+Italiano
+Aumento del prezzo di vendita del cibo realizzato dal gatto manager
+Cappello da baseball blu
+Piccola foglia
+Ciambella con fragole
+Cappello del vescovo
+Cappello da baseball rosso
+Copriorecchie
+Foglia marrone
+Cappello da gentiluomo
+Nastro verde
+Ciambella con cioccolato
+Cappello da marinaio
+Mela
+Vaso di fiori
+Cappello a cono
+Cappello lanterna
+Elmetto anatra
+Scatola di carta
+Vaso di girasole
+Peluche di balena viola
+Cappello bianco
+Occhiali neri
+Occhiali gialli
+Occhiali rotondi
+Sopracciglia arcuate
+Sopracciglia sporche
+Occhiali viola
+Occhiali blu
+Occhiali rosa
+Occhiali da strega rosa
+Occhiali da sole alieni rosa
+Occhiali a mezzo telaio
+Occhiali da sole esagonali viola
+Occhiali da sole da strega arancione
+Occhiali da sole pixel gialli
+Baffi arancioni
+Occhiali rossi
+Occhiali
+Occhiali pixel
+Monocolo
+Naso di Rudolph
+Borsa gialla
+Borsa verde
+Zaino viola
+Zaino giallo
+Zaino
+Borsa giocattolo
+Borsa rotonda
+Borsa regalo
+Sacco regalo verde
+Borsa anatra
+Borsa nuoto verde
+Sacco regalo blu
+Zaino di lana bianca
+Borsa cuore
+Nastro a scacchi
+Borsa carota
+Borsa banana
+Padella nera
+Ukulele rosso
+Borsa a tracolla
+Artigianato
+Elmetto anatra (progetto)
+Scatola di carta (progetto)
+Vaso di girasole (progetto)
+Peluche di balena viola (progetto)
+Cappello bianco (progetto)
+Occhiali rossi (progetto)
+Occhiali (progetto)
+Occhiali pixel (progetto)
+Monocolo (progetto)
+Naso di Rudolph (progetto)
+Borsa carota (progetto)
+Borsa banana (progetto)
+Padella nera (progetto)
+Ukulele rosso (progetto)
+Borsa a tracolla (progetto)
+Tutti gli aggiornamenti completati
+Aumento visitatori +{0}
+Aumento visitatori auto +{0}
+Aumento part-time +{0}
+Aumento velocità part-time
+Aumento chef +{0}
+Aumento velocità chef
+Aumento profitto totale x{0}
+Aumento profitto vendite {0} x{1}
+Aumento velocità produzione {0}
+Evento di degustazione
+Promozione cibo
+Invia promozioni via testo
+Distribuisci volantini
+Pubblica sui social media
+Pubblica video virale
+Pubblica foto cool
+Il cliente è re
+Acquista tavolo
+Acquista grande tavolo
+Posto al finestrino
+Acquista tavolo all'aperto
+Aggiungi posti all'aperto
+Aggiungi personale
+Recluta candidati
+Aiuto richiesto
+Assumi amico
+Assumi amico dell'amico
+Assumi cugino dell'amico
+Assumi famiglia dell'amico
+Il cliente non ha sempre ragione
+Assumi chef dell'amico
+Assumi amico dello chef
+Fornisci vacanza
+Formazione chef
+Condurre un programma di formazione per chef
+Pubblica lavoro
+Assumi stagista
+Passaggio veloce
+Camminata veloce
+Corsa veloce
+Modalità veloce
+Passi rapidi
+Passi ritmici
+Corsa chef veloce
+Camminata veloce
+Modalità coda scodinzolante
+Miagolio affollato
+Corsa in cucina
+Chef veloce
+Mixaggio super veloce
+Capacità aumentata
+Texture perfetta
+Completamento immediato
+Modalità super veloce
+Migliori attrezzature
+Migliori macchine
+Aggiungi funzione di regolazione automatica
+Master di distribuzione automatica
+Dispenser dinamico
+Grill salva tempo
+Calore ultra-veloce
+Maestro della pronta cottura
+Esperto di fuoco
+Cottura perfetta
+Macchina per friggere crispy
+Frittrice veloce
+Oliva dorata
+Maestro del croccante
+Crisper tutto-in-uno
+Migliori attrezzature
+Migliori macchine
+Aggiungi funzione di regolazione automatica
+Master di distribuzione automatica
+Dispenser dinamico
+Nuova macchina da caffè
+Aggiornamento in un passo
+Aggiornamento premium
+Nuovo caffè ogni giorno
+Tempo libero fatto di caffè
+Cottura più veloce
+Più velocemente, più liscio
+Impasto purificato e veloce
+Mixer aggiornato
+Cottura più veloce
+Coltello più affilato
+Tagliere più largo
+Ingredienti già tritati
+Aumento velocità di taglio
+Organizzazione ordinata
+Riscaldamento più veloce
+Modalità cottura automatica
+Funzione di riduzione dei tempi
+Interno più ampio
+Regolazione del timer precisa
+Facile girata
+Impugnatura leggera
+Durabilità migliorata
+Aumento della ritenzione di calore
+Design della padella più profondo
+NyaNya
+Pio
+Ronia
+Liri
+Poli
+Mono
+Coco
+Moka
+Miyo
+Goda
+Mini
+Yuja
+Dodo
+Muna
+Punto
+Chiru
+Minyu
+Epi
+Zucchero
+Siru
+Alfredo
+Audrey
+Aron
+Suri
+Bacca
+{0}.{1}'s {2}Ricompensa Chiara
+Viaggiatore Pioniere
+Dalle strade dure
+Gatto emotivo e attento
+Gatto forte e sano
+Un gatto interessato all’elettronica
+Amici stretti di NyaNya
+Amici stretti di Pio
+Amici di Sugar Village
+Amici del cinema
+Missione Gior.
+Resta: {0}h {1}m
+- CLEARED -
+Guarda ad
+Prendi mancia
+Sblocca cibo
+Compra staff
+Apri box
+Livella cibo
+Controlla regalo
+Compra upgrade
+Prendi ordine
+Servi cibo
+Apri scatola con fiocco
+Usa abilità promozione
+_
