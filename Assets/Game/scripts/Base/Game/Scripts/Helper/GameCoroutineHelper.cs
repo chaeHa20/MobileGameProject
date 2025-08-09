@@ -141,9 +141,20 @@ public class GameCoroutineHelper : CoroutineHelper
         StartCoroutine(coWait(callback));
     }
 
+    public void waitSeconds(float seconds, Action callback)
+    {
+        StartCoroutine(coWait(seconds, callback));
+    }
+
     public IEnumerator coWait(Action callback)
     {
         yield return null;
+        callback?.Invoke();
+    }
+
+    public IEnumerator coWait(float second, Action callback)
+    {
+        yield return new WaitForSeconds(second);
         callback?.Invoke();
     }
 }

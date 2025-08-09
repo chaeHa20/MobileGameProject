@@ -14,7 +14,7 @@ public class UIGameGetThrowItemEvent : UIGetItemEvent
 
     protected override void createEventObject(Action<Disposable> callback)
     {
-        var parent = UIHelper.instance.canvasGroup.getSafeArea((int)eUIRestaurantLayer.OverCurrency);
+        var parent = UIHelper.instance.canvasGroup.getSafeArea((int)eUIMainLayer.OverCurrency);
 
         UIGetThrowItemEventObject obj = null;
         ResourceRow resourceRow = GameTableHelper.instance.getRow<ResourceRow>((int)eTable.Resource, (int)m_resourceId);

@@ -18,11 +18,11 @@ public class UIGameHud : UIHud
 
     public virtual void initializeMain(GameObject positionObject)
     {
-        var canvas = UIHelper.instance.canvasGroup.getCanvas((int)eUIRestaurantLayer.Main).canvas;
+        var canvas = UIHelper.instance.canvasGroup.getCanvas((int)eUIMainLayer.Main).canvas;
         base.initialize(positionObject, canvas, Camera.main);
     }
 
-    public void initializeTutorialNavigation(eUIRestaurantLayer layer, GameObject positionObject)
+    public void initializeTutorialNavigation(eUIMainLayer layer, GameObject positionObject)
     {
         var canvas = UIHelper.instance.canvasGroup.getCanvas((int)layer).canvas;
         base.initialize(positionObject, canvas, Camera.main);

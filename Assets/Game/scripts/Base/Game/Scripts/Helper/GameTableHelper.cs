@@ -105,7 +105,7 @@ public class GameTableHelper : TableHelper<GameTableHelper>
         return path;
     }
 
-    public string getStagePrefabPath(int resourceId, string id)
+    public string getIntroSpritePath(int resourceId, int index)
     {
         if (Logx.isActive)
             Logx.assert(0 < resourceId, "Invalid resource id {0}", resourceId);
@@ -125,7 +125,7 @@ public class GameTableHelper : TableHelper<GameTableHelper>
             path = resourceRow.filename;
         }
 
-        var realPath = string.Format(path, id);
+        var realPath = string.Format(path, index);
 
         return realPath;
     }

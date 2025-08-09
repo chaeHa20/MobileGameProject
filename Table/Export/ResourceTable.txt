@@ -1,0 +1,4 @@
+int	string	int	int
+Id	Filename	Path_Id	Pool_Id
+1001	intro_{0}	0	0
+1005	UIGameIntroToonWindow	1	0

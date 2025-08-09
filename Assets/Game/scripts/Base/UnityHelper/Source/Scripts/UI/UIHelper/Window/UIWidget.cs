@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace UnityHelper
 {
-    public enum eUIRestaurantLayer
+    public enum eUILobbyLayer
     {
         Hud = 0,
         Bottom = 1,

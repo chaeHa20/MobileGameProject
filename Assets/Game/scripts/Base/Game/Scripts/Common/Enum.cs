@@ -101,9 +101,11 @@ public enum eEquipmentAbility
 public enum eResource
 {
     None,
-    UIGameToastMsg = 1001,
+    UIGameToastMsg = 1000,
+    introToon = 1001,
     UISynthesisReturnCurrencyToastMsg = 1002,
     UIPlayerHealthItem = 1003,
+    UIGameIntroToonWindow = 1005,
 }
 
 public enum eUIMessage

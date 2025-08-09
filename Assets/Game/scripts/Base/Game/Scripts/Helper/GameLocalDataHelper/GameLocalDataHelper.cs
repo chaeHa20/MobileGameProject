@@ -26,7 +26,6 @@ public class GameLocalDataHelper : LocalDataHelper
         addData<LocalGameData>(eLocalData.Game.ToString(), 0);
         addData<LocalQuestData>(eLocalData.Quest.ToString(), 0);
         addData<LocalTutorialData>(eLocalData.Tutorial.ToString(), 0);
-        addData<LocalAdData>(eLocalData.Ad.ToString(), 0);
 
         addData<LocalPlayerData>(eLocalData.Player.ToString(), 0);
         addData<LocalCurrencyData>(eLocalData.Currency.ToString(), 0);
