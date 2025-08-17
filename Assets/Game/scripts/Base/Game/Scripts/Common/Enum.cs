@@ -40,15 +40,38 @@ public enum eItem
     NoAds = 7,
 }
 
-public enum eItemBox
+public enum eEquip
 {
     None = 0,
-    BasicBox = 1001,
-    PremiunBox = 1002,
-    LegendaryBos = 1003,
-    EventBos = 1004,
-    LimitedBox = 1005,
+    Weapon = 1,
+    Armor = 2,
 }
+
+public enum eEquipmentAbility
+{
+    None = 0,
+    NormalRange = 1,
+    WideRange = 2,
+    ExtraWideRange = 3,
+    ShotRange = 4,
+    ExtraShotRange = 5,
+    NormalAtkPower = 6,
+    HighAtkPower = 7,
+    LowAtkPower = 8,
+    NormalAtkSpeed = 9,
+    FastAtkSpeed = 10,
+    ExtraFastAtkSpeed = 11,
+    SlowAtkSpeed = 12,
+    NormalStun = 13,
+    StrongStun = 14,
+    WeakStun = 15,
+    ExtraWeakStun = 16,
+    NormalPiercing = 17,
+    StrongPiercing = 18,
+    ExtraStrongPiercing = 19,
+    WeakPiercing = 20,
+}
+
 
 public enum eNoAds
 {
