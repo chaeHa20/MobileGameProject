@@ -115,11 +115,6 @@ public enum eCharacterAbility
     None = 0,
 }
 
-public enum eEquipmentAbility
-{
-    None = 0,
-}
-
 
 public enum eResource
 {

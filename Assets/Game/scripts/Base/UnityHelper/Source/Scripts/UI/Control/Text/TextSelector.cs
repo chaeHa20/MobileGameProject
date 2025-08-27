@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using System;
 
 namespace UnityHelper
@@ -10,20 +11,25 @@ namespace UnityHelper
     public class TextSelector
     {
         [SerializeField] Text uiText = null;
+        [SerializeField] TMP_Text tmpText = null;
 
         public string text
         {
             get
             {
-                if (null != uiText)
-                    return uiText.text;                
+                if (null != tmpText)
+                    return tmpText.text;
+                else if (null != uiText)
+                    return uiText.text;
                 else
                     return null;
             }
 
             set
             {
-                if (null != uiText)
+                if (null != tmpText)
+                    tmpText.text = value;
+                else if (null != uiText)
                     uiText.text = value;
             }
         }
@@ -32,7 +38,9 @@ namespace UnityHelper
         {
             get
             {
-                if (null != uiText)
+                if (null != tmpText)
+                    return tmpText.gameObject;
+                else if (null != uiText)
                     return uiText.gameObject;
                 else
                     return null;
@@ -43,7 +51,9 @@ namespace UnityHelper
         {
             get
             {
-                if (null != uiText)
+                if (null != tmpText)
+                    return tmpText.color;
+                else if (null != uiText)
                     return uiText.color;
                 else
                     return Color.white;
@@ -51,7 +61,9 @@ namespace UnityHelper
 
             set
             {
-                if (null != uiText)
+                if (null != tmpText)
+                    tmpText.color = value;
+                else if (null != uiText)
                     uiText.color = value;
             }
         }

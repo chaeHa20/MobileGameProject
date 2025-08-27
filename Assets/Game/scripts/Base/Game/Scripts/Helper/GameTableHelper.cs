@@ -9,6 +9,10 @@ public enum eTable
     Pool,
     Sound,
     String,
+
+    Item,
+    Equipment,
+    EquipmentAbilityUpgrade,
 }
 
 public class GameTableHelper : TableHelper<GameTableHelper>
@@ -34,14 +38,16 @@ public class GameTableHelper : TableHelper<GameTableHelper>
 
 
         // Item
-        
-        
+        load<ItemTable>((int)eTable.Item, "Table/ItemTable", crypto);
+        load<EquipmentTable>((int)eTable.Equipment, "Table/EquipmentTable", crypto);
+        load<EquipmentAbilityUpgradeTable>((int)eTable.EquipmentAbilityUpgrade, "Table/EquipmentUpgradeAbilityTable", crypto);
+
         // Shop
-        
-        
+
+
 
         // Sound
-        
+
     }
 
     public string getString(int id)
