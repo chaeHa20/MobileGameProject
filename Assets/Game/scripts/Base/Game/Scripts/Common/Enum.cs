@@ -124,6 +124,10 @@ public enum eResource
     UISynthesisReturnCurrencyToastMsg = 1002,
     UIPlayerHealthItem = 1003,
     UIGameIntroToonWindow = 1005,
+    UIGameUserProfileWindow = 1011,
+    UIGameMissionWindow = 1012,
+    UIGameCollectionWindow = 1013,
+    UIGameShopWindow = 1014,
 }
 
 public enum eUIMessage

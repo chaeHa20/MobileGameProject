@@ -6,7 +6,6 @@
         public enum eInactiveCurrent
         {
             None,
-            // 새로운 창이 open 되기 전에 현재창이 안보이게 되는 경우에 이걸 쓰자
             Lazy,
             Immediately
         }

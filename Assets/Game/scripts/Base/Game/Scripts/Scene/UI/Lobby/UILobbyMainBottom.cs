@@ -42,27 +42,56 @@ public class UILobbyMainBottom : UIComponent
     }
 
     private void resetGachaCoolTime()
-    {
+    { 
     }
 
     private void openUserProfileWindow()
     {
-        // 8월 5주차 해당 프리팹 제작 예정
+        var datas = new UIGameWindowData
+        {
+            resourceId = eResource.UIGameUserProfileWindow,
+            layer = (int)eUILobbyLayer.Main,
+            inactiveCurrent = UIWindowData.eInactiveCurrent.None,
+        };
+
+        GameUIHelper.getInstance().openGameWindow<UIGameUserProfileWindow>(datas);
+
     }
 
     private void openMissionWindow()
     {
-        // 8월 5주차 해당 프리팹 제작 예정
+        var datas = new UIGameWindowData
+        {
+            resourceId = eResource.UIGameMissionWindow,
+            layer = (int)eUILobbyLayer.Main,
+            inactiveCurrent = UIWindowData.eInactiveCurrent.None,
+        };
+
+        GameUIHelper.getInstance().openGameWindow<UIGameMissionWindow>(datas);
     }
 
     private void openCollectionWindow()
     {
-        // 8월 5주차 해당 프리팹 제작 예정
+        var datas = new UIGameWindowData
+        {
+            resourceId = eResource.UIGameCollectionWindow,
+            layer = (int)eUILobbyLayer.Main,
+            inactiveCurrent = UIWindowData.eInactiveCurrent.None,
+        };
+
+        GameUIHelper.getInstance().openGameWindow<UIGameCollectionWindow>(datas);
     }
 
     private void openShopWindow()
     {
-        // 8월 5주차 해당 프리팹 제작 예정
+        var datas = new UIGameWindowData
+        {
+            resourceId = eResource.UIGameShopWindow,
+            layer = (int)eUILobbyLayer.Main,
+            inactiveCurrent = UIWindowData.eInactiveCurrent.None,
+        };
+
+        GameUIHelper.getInstance().openGameWindow<UIGameShopWindow>(datas);
     }
 
     private void openGacha()
