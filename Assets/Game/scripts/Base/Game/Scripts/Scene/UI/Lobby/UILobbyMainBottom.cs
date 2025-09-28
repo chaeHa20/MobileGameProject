@@ -33,6 +33,11 @@ public class UILobbyMainBottom : UIComponent
         openGacha();
     }
 
+    public void onLoadRunnerScene()
+    {
+        loadMainScene();
+    }
+
     private void startCoolTime(float duration)
     {
 
@@ -97,5 +102,10 @@ public class UILobbyMainBottom : UIComponent
     private void openGacha()
     {
         // 8월 5주차 해당 프리팹 제작 예정
+    }
+
+    private void loadMainScene()
+    {
+        GameSceneHelper.getInstance().loadMainScene();
     }
 }

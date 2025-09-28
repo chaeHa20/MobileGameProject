@@ -37,7 +37,8 @@ namespace UnityHelper
         {
             base.initialize();
 
-            UIHelper.instance.initScene();
+            if(null != UIHelper.instance)
+                UIHelper.instance.initScene();
 
             setActiveBlock(false, false);
         }

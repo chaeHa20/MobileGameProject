@@ -10,7 +10,7 @@ public enum eScene
     LogoScene,
     StartScene,
     Lobby,
-    Main,
+    Runner,
 }
 
 public enum eUIMainLayer

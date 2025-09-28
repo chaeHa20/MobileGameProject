@@ -6,6 +6,8 @@ public class RunnerSceneLoadData : GameSceneLoadData
 
 public class RunnerScene : GameScene
 {
+    [SerializeField] UIRunnerScene m_ui;
+
     protected override void initialize()
     {
         base.initialize();

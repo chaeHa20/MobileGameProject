@@ -29,6 +29,14 @@ public class PlayerManager : MonoSingleton<PlayerManager>
         m_playerCharacter.rotation = Quaternion.Lerp(m_playerCharacter.rotation, targetRotation, dt);
     }
 
+    public void updateJoystick(float dt, Vector3 dir)
+    {
+        var targetRotation = Quaternion.LookRotation(dir.normalized);
+
+        m_player.position += dir * dt;
+        m_playerCharacter.rotation = Quaternion.Lerp(m_playerCharacter.rotation, targetRotation, 1.0f);
+    }
+
     public void updateMove(float dt, float weight)
     {
         m_player.position += m_playerCharacter.forward.normalized * weight * dt;

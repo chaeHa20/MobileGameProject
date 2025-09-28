@@ -70,6 +70,11 @@ namespace UnityHelper
             UIHelper.instance.setParent(parent, gameObject, option);
         }
 
+        public virtual void updateJoystick(float dt)
+        {
+
+        }
+
         protected virtual void OnDestroy()
         {
             unregistMessages();

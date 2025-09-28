@@ -156,7 +156,7 @@ public partial class Character : AbilityEntity
 
     protected virtual void revive()
     {
-        if (GameSceneHelper.instance.isCurrentScene(eScene.Main.ToString()))
+        if (GameSceneHelper.instance.isCurrentScene(eScene.Runner.ToString()))
             ai.clearGoal();
     }
 

@@ -80,15 +80,15 @@ public class GameSceneHelper : SceneHelper
         load<T>(sceneLoadData, isImmediately);
     }
 
-    //public void loadInitializeAppScene()
-    //{
-    //    var sceneLoadData = new GameSceneLoadData
-    //    {
-    //        sceneName = eScene.InitializeApp.ToString(),
-    //    };
+    public void loadMainScene()
+    {
+        var sceneLoadData = new GameSceneLoadData
+        {
+            sceneName = eScene.Runner.ToString(),
+        };
 
-    //    asyncLoad<EmptySceneLoader>(sceneLoadData, true);
-    //}
+        asyncLoad<RunnerSceneLoader>(sceneLoadData, false);
+    }
 
     public void loadStartScene(bool isAppStart, bool isImmediately)
     {
@@ -107,17 +107,6 @@ public class GameSceneHelper : SceneHelper
             asyncLoad<EmptySceneLoader>(sceneLoadData, isImmediately);
         }
     }
-
-    //public void loadRestartScene(bool isLoadTable, bool isImmediately)
-    //{
-    //    var sceneLoadData = new RestartSceneLoadData
-    //    {
-    //        sceneName = eScene.Restart.ToString(),
-    //        isLoadTable = isLoadTable,
-    //    };
-
-    //    load<EmptySceneLoader>(sceneLoadData, isImmediately);
-    //}
 
     public void loadLobbyScene()
     {
