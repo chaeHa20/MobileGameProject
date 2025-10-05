@@ -1,16 +1,15 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.EventSystems.EventTrigger;
 
 
-public class PlayerData : AbilityEntityData
+public class PlayerData : EntityData//AbilityEntityData
 {
     public float scale = 1.0f;
     public int level;
 }
 
-public class Player : AbilityEntity
+public class Player : Entity//AbilityEntity
 {
     private event Action m_healthUpdate;
     private event Action m_playerDead;
@@ -23,7 +22,6 @@ public class Player : AbilityEntity
     private bool m_isDead = false;
 
     private HashSet<long> m_attackingMeUuids = new HashSet<long>();
-
 
     public PlayerModel playerModel => model as PlayerModel;
     public Transform center => playerModel.center;
@@ -47,8 +45,8 @@ public class Player : AbilityEntity
 
         base.initialize(entityData);
 
-        m_moveSpeed = getAbilityValueFloat(eAbility.MoveSpeed);
-        m_hp = getAbilityValueInt(eAbility.MaxHealth);
+        m_moveSpeed = 1.0f;// getAbilityValueFloat(eAbility.MoveSpeed);
+        m_hp = 100;//getAbilityValueInt(eAbility.MaxHealth);
         m_maxHp = m_hp;
         m_isDead = false;
         m_attackingMeUuids.Clear();
@@ -132,6 +130,11 @@ public class Player : AbilityEntity
     {
         m_isDead = false;
         m_playerDead += callback;
+    }
+
+    protected override void loadModel(int id, Action callback)
+    {
+        callback?.Invoke();
     }
 
     public override void Dispose()

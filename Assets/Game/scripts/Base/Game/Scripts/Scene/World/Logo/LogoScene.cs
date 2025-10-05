@@ -12,6 +12,8 @@ public class LogoScene : GameScene
 
         createSettings();
         initApp();
+
+        m_uiLogoScene.initUILogoScene();
     }
 
     private void createSettings()
@@ -27,7 +29,7 @@ public class LogoScene : GameScene
     {
         InitializeApp.create(gameObject, m_localePlugin, () =>
         {
-            GameSceneHelper.getInstance().loadStartScene(true, true);
+            m_uiLogoScene.onActivePlayButton();
         });
     }
 }

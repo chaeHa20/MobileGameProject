@@ -29,8 +29,6 @@ public class UIJoyStick : UIComponent, IBeginDragHandler, IDragHandler, IEndDrag
         var clampedDir = inputDir.magnitude < m_joystickDirRange ? inputDir : inputDir.normalized * m_joystickDirRange;
 
         m_stickRect.anchoredPosition = clampedDir;
-
-
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -52,7 +50,7 @@ public class UIJoyStick : UIComponent, IBeginDragHandler, IDragHandler, IEndDrag
             PlayerManager.instance.updateJoystick(dt, dir);
     }
 
-    private Vector3 toVector3(Vector2 vec2, float y= 0.0f)
+    private Vector3 toVector3(Vector2 vec2, float y = 0.0f)
     {
         return new Vector3(vec2.x, y, vec2.y);
     }

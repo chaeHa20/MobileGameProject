@@ -79,9 +79,40 @@ public class GamePoolHelper : PoolHelper
         }
     }
 
+    public void pop<T>(eResource resourceId, int index, Action<T> callback) where T : PoolObject
+    {
+        pop<T>((int)resourceId, index, callback);
+    }
+
+    public void pop<T>(int resourceId,int index, Action<T> callback) where T : PoolObject
+    {
+        if (Logx.isActive)
+            Logx.assert(0 < resourceId, "Invalid resource id {0}", resourceId);
+
+        var resourceRow = GameTableHelper.instance.getRow<ResourceRow>((int)eTable.Resource, resourceId);
+        var filename = string.Format(resourceRow.filename, index);
+        if (existPool(filename))
+        {
+            pop<T>(filename, callback);
+        }
+        else
+        {
+            createPool(resourceRow,index, () =>
+            {
+                pop<T>(filename, callback);
+            });
+        }
+    }
+
     private void createPool(ResourceRow resourceRow, Action callback)
     {
         var resPath = GameTableHelper.instance.getResourcePath(resourceRow.id);
+        createPool(resPath, resourceRow.poolId, callback);
+    }
+
+    private void createPool(ResourceRow resourceRow,int index, Action callback)
+    {
+        var resPath = GameTableHelper.instance.getResourcePath(resourceRow.id, index);
         createPool(resPath, resourceRow.poolId, callback);
     }
 

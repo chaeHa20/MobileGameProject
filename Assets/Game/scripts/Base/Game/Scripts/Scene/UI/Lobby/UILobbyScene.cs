@@ -4,7 +4,20 @@ using UnityHelper;
 public class UILobbyScene : UIGameScene
 {
 
-    public void openIntroToonWindow()
+    public void checkIntroToonWindow()
+    {
+        var req = new Req_GetIsShowIntro();
+
+        GameLocalDataHelper.instance.request<Res_GetIsShowIntro>(req, (res) =>
+        {
+            if(res.isSuccess && !res.isShowIntro)
+            {
+                openIntroToonWindow();
+            }
+        });
+    }
+
+    private void openIntroToonWindow()
     {
         var data = new UIGameIntroToonWindowData
         {
@@ -16,3 +29,5 @@ public class UILobbyScene : UIGameScene
         GameUIHelper.getInstance().openGameWindow<UIGameIntroToonWindow>(data, true);
     }
 }
+
+

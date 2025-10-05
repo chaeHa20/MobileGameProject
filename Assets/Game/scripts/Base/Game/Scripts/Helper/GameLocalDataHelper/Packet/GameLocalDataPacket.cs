@@ -264,6 +264,48 @@ public class Res_GetTutorial : Res_LocalData
     public LocalTutorial tutorial;
 }
 
+public class Req_ShowIntro : Req_LocalData
+{
+    public Req_ShowIntro()
+    {
+        m_pid = (int)eLocalProtocol.ShowIntro;
+        m_dataType = eLocalData.User;
+    }
+}
+
+public class Res_ShowIntro: Res_LocalData
+{
+    
+}
+
+public class Req_SkipIntro : Req_LocalData
+{
+    public Req_SkipIntro()
+    {
+        m_pid = (int)eLocalProtocol.SkipIntro;
+        m_dataType = eLocalData.User;
+    }
+}
+
+public class Res_SkipIntro : Res_LocalData
+{
+
+}
+
+public class Req_GetIsShowIntro : Req_LocalData
+{
+    public Req_GetIsShowIntro()
+    {
+        m_pid = (int)eLocalProtocol.GetIsShowIntro;
+        m_dataType = eLocalData.User;
+    }
+}
+
+public class Res_GetIsShowIntro : Res_LocalData
+{
+    public bool isShowIntro;
+}
+
 public class Req_CompleteTutorial : Req_LocalData
 {
     public eTutorialId tutorialType;

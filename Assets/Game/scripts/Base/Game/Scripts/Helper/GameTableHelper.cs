@@ -111,6 +111,29 @@ public class GameTableHelper : TableHelper<GameTableHelper>
         return path;
     }
 
+    public string getResourcePath(int resourceId, int index)
+    {
+        if (Logx.isActive)
+            Logx.assert(0 < resourceId, "Invalid resource id {0}", resourceId);
+
+        string path = "";
+        ResourceRow resourceRow = getRow<ResourceRow>((int)eTable.Resource, resourceId);
+        if (null == resourceRow)
+            return null;
+
+        if (0 < resourceRow.pathId)
+        {
+            PathRow pathRow = getRow<PathRow>((int)eTable.Path, resourceRow.pathId);
+            path = FileHelper.combine(pathRow.path, string.Format(resourceRow.filename, index));
+        }
+        else
+        {
+            path = string.Format(resourceRow.filename, index);
+        }
+
+        return path;
+    }
+
     public string getIntroSpritePath(int resourceId, int index)
     {
         if (Logx.isActive)

@@ -44,6 +44,7 @@ public class GameLocalDataHelper : LocalDataHelper
         addProtocol<LocalProtocolGetAllValidTutorial>((int)eLocalProtocol.GetAllTutorial, false);
         addProtocol<LocalProtocolGetQuest>((int)eLocalProtocol.GetQuest, false);
         addProtocol<LocalProtocolGetTodayQuests>((int)eLocalProtocol.GetAllQuest, false);
+        addProtocol<LocalProtocolGetIsShowIntro>((int)eLocalProtocol.GetIsShowIntro, true);
 
 
 
@@ -58,6 +59,8 @@ public class GameLocalDataHelper : LocalDataHelper
         addProtocol<LocalProtocolReceiveQuestReward>((int)eLocalProtocol.ReceiveQuestReward, true);
         addProtocol<LocalProtocolReceiveAllQuestReward>((int)eLocalProtocol.ReceiveAllQuestReward, true);
         addProtocol<LocalProtocolDailyReset>((int)eLocalProtocol.DailyReset, true);
+        addProtocol<LocalProtocolShowIntro>((int)eLocalProtocol.ShowIntro, true);
+        addProtocol<LocalProtocolSkipIntro>((int)eLocalProtocol.SkipIntro, true);
     }
 
     public override void request<U>(Req_LocalData req, Action<U> callback)

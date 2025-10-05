@@ -33,8 +33,7 @@ public class Entity : PoolObject
     private StateFunction m_stateFunction = null;
     private eTeam m_team = eTeam.None;
     private EntityModel m_model = null;
-    private Transform m_transform = null;
-
+    private Transform m_transform = null; 
 
     public int id => m_id;
     public long uuid => m_uuid;

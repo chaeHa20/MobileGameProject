@@ -119,6 +119,9 @@ public enum eCharacterAbility
 public enum eResource
 {
     None,
+    PlayerCharacter = 10,
+    MapTile = 101,
+    MapObstacles = 102,
     UIGameToastMsg = 1000,
     introToon = 1001,
     UISynthesisReturnCurrencyToastMsg = 1002,
@@ -333,6 +336,11 @@ public enum eEntity
     SubPlayer = 1 << 5,
     Prop = 1 << 7,
 }
+public enum ePlayer
+{
+    PlayerId = 1,
+}
+
 
 public enum eMotion
 {

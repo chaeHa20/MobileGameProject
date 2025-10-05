@@ -13,11 +13,15 @@ public class UIGameIntroToonWindow : UIGameMainWindow
 
     private int m_startIndex = 0;
 
+    private bool m_isSkipIntro = false;
+
     public override void initialize(UIWidgetData data)
     {
         base.initialize(data);
 
         var d = data as UIGameIntroToonWindowData;
+
+        m_isSkipIntro = false;
         startLoadToon(d.lastIndex);
     }
 
@@ -39,16 +43,55 @@ public class UIGameIntroToonWindow : UIGameMainWindow
             {
                 m_toon.color = new Color(m_toon.color.r, m_toon.color.g, m_toon.color.b, value);
                 if (done)
-                    loadIntorToonSprite(index);
+                {
+                    if (m_isSkipIntro)
+                        base.onClose();
+                    else
+                        loadIntorToonSprite(index);
+                }
             }));
         }
         else
         {
             GameCoroutineHelper.getInstance().waitSeconds(2f, () =>
             {
-                base.onClose();
+                if(m_isSkipIntro)
+                    base.onClose();
+                else
+                    setEndShowIntroToon();
             });
         }
+    }
+
+    public void onClickSkipIntro()
+    {
+        skipIntroToon();
+    }
+
+    private void skipIntroToon()
+    {
+        var req = new Req_SkipIntro();
+
+        GameLocalDataHelper.instance.request<Res_SkipIntro>(req, (res) =>
+        {
+            if(res.isSuccess)
+            {
+                m_isSkipIntro = true;
+            }
+        });
+    }
+
+    private void setEndShowIntroToon()
+    {
+        var req = new Req_ShowIntro();
+
+        GameLocalDataHelper.instance.request<Res_ShowIntro>(req, (res) =>
+        {
+            if (res.isSuccess)
+            {
+                base.onClose();
+            }
+        });
     }
 
     private void showSprite(int index)

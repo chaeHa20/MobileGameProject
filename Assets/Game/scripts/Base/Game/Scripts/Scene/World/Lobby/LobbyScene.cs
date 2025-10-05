@@ -12,6 +12,6 @@ public class LobbyScene : GameScene
         base.initialize();
 
         if (null != m_ui)
-            m_ui.openIntroToonWindow();
+            m_ui.checkIntroToonWindow();
     }
 }

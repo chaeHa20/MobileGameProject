@@ -5,10 +5,28 @@ using UnityHelper;
 public class LocalPlayerData : LocalData
 {
     [SerializeField] List<LocalItem> m_attachedItems = new List<LocalItem>();
+    [SerializeField] int m_level = 1;
     [SerializeField] string m_playerSocailId = "";
 
     public List<LocalItem> attachedItems => m_attachedItems;
     public string playerSocailId => playerSocailId;
+
+    public int level => m_level;
+
+    public override void initialize(string _name, int _id)
+    {
+        base.initialize(_name, _id);
+
+        m_level = 1;
+    }
+
+    public void levelUp()
+    {
+        m_level++;
+        if (Define.PLAYER_MAX_LEVEL < m_level)
+            m_level = Define.PLAYER_MAX_LEVEL;
+    }
+
 
     public void setPlayerSocialId(string id)
     {
