@@ -25,12 +25,21 @@ public class MapTile : PoolObject
     [SerializeField] GameObject m_obstacleParent;
 
     private GameObject m_mapParent;
+    private MapObstacles m_obstacle;
     public GameObject obstacleParent => m_obstacleParent;
+    
 
     public virtual void initialize(Vector2 position, GameObject parent)
     {
         m_myPosition = position;
         m_mapParent = parent;
+    }
+
+    public void spawnMonster(int monsterId)
+    {
+        if (null == m_obstacle)
+            return;
+        var spawnPoint = m_obstacle.findMonsterSpawnPoint();
     }
 
     public void loadNewTile(eMapTile targetType)
@@ -52,10 +61,12 @@ public class MapTile : PoolObject
 
     protected virtual void loadMapModel(MapTile parent,Action callback) // 타일 맵 상에 오브젝트들 랜덤 생성
     {
-        var randomIndex = UnityEngine.Random.Range(1, Define.MAX_ObBSTACLE_COUNT);
+        var randomIndex = UnityEngine.Random.Range(0, Define.MAX_ObBSTACLE_COUNT);
         GamePoolHelper.getInstance().pop<MapObstacles>(eResource.MapObstacles, randomIndex, (obstacle) =>
         {
             GraphicHelper.setParent(parent.obstacleParent, obstacle.gameObject);
+
+            m_obstacle = obstacle;
             callback?.Invoke();
         });
     }

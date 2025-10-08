@@ -415,3 +415,50 @@ public class Req_SetSocialId : Req_LocalData
 public class Res_SetSocialId : Res_LocalData
 {
 }
+
+public class Req_GetCollections: Req_LocalData
+{
+    public Req_GetCollections()
+    {
+        m_pid = (int)eLocalProtocol.GetCollections;
+        m_dataType = eLocalData.Collection;
+    }
+}
+
+public class Res_GetCollections : Res_GameData
+{
+    public LocalCollections<LocalCollection> collections;
+}
+
+public class Req_GetCollectionType : Req_LocalData
+{
+    public eCollection type;
+
+    public Req_GetCollectionType()
+    {
+        m_pid = (int)eLocalProtocol.GetCollectionType;
+        m_dataType = eLocalData.Collection;
+    }
+}
+
+public class Res_GetCollectionType : Res_GameData
+{
+    public List<LocalCollection> targetCollections;
+}
+
+public class Req_GetCollectionGrade : Req_LocalData
+{
+    public eCollection type;
+    public eGrade grade;
+
+    public Req_GetCollectionGrade()
+    {
+        m_pid = (int)eLocalProtocol.GetCollectionGrade;
+        m_dataType = eLocalData.Collection;
+    }
+}
+
+public class Res_GetCollectionGrade : Res_GameData
+{
+    public List<LocalCollection> targetCollections;
+}

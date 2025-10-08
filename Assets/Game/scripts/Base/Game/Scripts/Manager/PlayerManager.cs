@@ -35,7 +35,6 @@ public class PlayerManager : MonoSingleton<PlayerManager>
             team = eTeam._1,
             type = eEntity.Player,
             resourceId = (int)eResource.PlayerCharacter,
-            position = Vector3.zero,
             rotation = Quaternion.identity,
         };
 

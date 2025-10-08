@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using UnityEngine;
 using UnityHelper;
 
 public class GameLocalDataHelper : LocalDataHelper
@@ -29,6 +28,7 @@ public class GameLocalDataHelper : LocalDataHelper
 
         addData<LocalPlayerData>(eLocalData.Player.ToString(), 0);
         addData<LocalCurrencyData>(eLocalData.Currency.ToString(), 0);
+        addData<LocalCollectionData>(eLocalData.Collection.ToString(), 0);
     }
 
     protected override void initProtocols()
@@ -44,13 +44,16 @@ public class GameLocalDataHelper : LocalDataHelper
         addProtocol<LocalProtocolGetAllValidTutorial>((int)eLocalProtocol.GetAllTutorial, false);
         addProtocol<LocalProtocolGetQuest>((int)eLocalProtocol.GetQuest, false);
         addProtocol<LocalProtocolGetTodayQuests>((int)eLocalProtocol.GetAllQuest, false);
-        addProtocol<LocalProtocolGetIsShowIntro>((int)eLocalProtocol.GetIsShowIntro, true);
+        addProtocol<LocalProtocolGetIsShowIntro>((int)eLocalProtocol.GetIsShowIntro, false);
+        addProtocol<LocalProtocolGetCollections>((int)eLocalProtocol.GetCollections, false);
+        addProtocol<LocalProtocolGetCollectionType>((int)eLocalProtocol.GetCollectionType, false);
+        addProtocol<LocalProtocolGetCollectionGrade>((int)eLocalProtocol.GetCollectionGrade, false);
 
 
 
         // save LocalData
         addProtocol<ProtocolLogin>((int)eLocalProtocol.Login, true);
-        addProtocol<LocalProtocolUseCurrency>((int)eLocalProtocol.UseCurrency, true);;
+        addProtocol<LocalProtocolUseCurrency>((int)eLocalProtocol.UseCurrency, true); ;
         addProtocol<LocalProtocolSetGameOption>((int)eLocalProtocol.SetGameOption, true);
         addProtocol<LocalProtocolAddRewardItems>((int)eLocalProtocol.AddRewardItems, true);
         addProtocol<LocalProtocolCompleteTutorial>((int)eLocalProtocol.CompleteTutorial, true);
@@ -141,8 +144,61 @@ public class GameLocalDataHelper : LocalDataHelper
             if (res.isSuccess && res.isUpdateQuest)
             {
                 GameUIHelper.getInstance().sendMessage((int)eUIMessage.UpdateQuest);
-                if(res.isClearQuest)
+                if (res.isClearQuest)
                     GameUIHelper.getInstance().sendMessage((int)eUIMessage.ClearQuest);
+            }
+        });
+    }
+
+    public void requestGetAllCollection(Action<List<LocalCollection>> callback)
+    {
+        var req = new Req_GetCollections();
+
+        request<Res_GetCollections>(req, (res) =>
+        {
+            if (res.isSuccess)
+            {
+                var e = res.collections.getEnumerator();
+                List<LocalCollection> result = new List<LocalCollection>();
+                while (e.MoveNext())
+                {
+                    result.Add(e.Current);
+                }
+
+                callback(result);
+            }
+        });
+    }
+
+    public void requestGetCollectionType(eCollection type, Action<List<LocalCollection>> callback)
+    {
+        var req = new Req_GetCollectionType
+        {
+            type = type,
+        };
+
+        request<Res_GetCollectionType>(req, (res) =>
+        {
+            if (res.isSuccess)
+            {
+                callback(res.targetCollections);
+            }
+        });
+    }
+
+    public void requestGetCollectionGrade(eCollection type, eGrade grade, Action<List<LocalCollection>> callback)
+    {
+        var req = new Req_GetCollectionGrade
+        {
+            type = type,
+            grade = grade,
+        };
+
+        request<Res_GetCollectionGrade>(req, (res) =>
+        {
+            if (res.isSuccess)
+            {
+                callback(res.targetCollections);
             }
         });
     }

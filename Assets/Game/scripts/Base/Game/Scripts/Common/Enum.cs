@@ -40,6 +40,16 @@ public enum eItem
     NoAds = 7,
 }
 
+public enum eCollection
+{
+    None = 0,
+    BGTemplete = 1,
+    Rigding = 2,
+    Weapon = 3,
+    Armor = 4,
+    PlayerCharacter = 5,
+}
+
 public enum eEquip
 {
     None = 0,
@@ -263,8 +273,9 @@ public enum eAbilityOwner
 public enum eEquipment
 {
     None = 0,
-    Product = 1,
-    BluePrint = 2,
+    Weapon = 1,
+    Armor = 2,
+    BluePrint = 10,
 }
 
 
@@ -275,6 +286,8 @@ public enum eGrade
     Rare = 2,
     Epic = 3,
     Legendary = 4,
+
+    // 아직 미정인 등급
     Ultimate = 5,
     Mythic = 6,
 
