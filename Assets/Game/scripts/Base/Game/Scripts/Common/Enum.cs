@@ -132,6 +132,7 @@ public enum eResource
     PlayerCharacter = 10,
     MapTile = 101,
     MapObstacles = 102,
+    MapTileDeadZone = 103,
     UIGameToastMsg = 1000,
     introToon = 1001,
     UISynthesisReturnCurrencyToastMsg = 1002,

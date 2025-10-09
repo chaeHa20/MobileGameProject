@@ -8,7 +8,6 @@ public class RunnerSceneLoadData : GameSceneLoadData
 public class RunnerScene : GameScene
 {
     [SerializeField] UIRunnerScene m_ui;
-    [SerializeField] Player m_player;
     [SerializeField] GameObject m_mapTileParent;
 
     protected override void initialize()

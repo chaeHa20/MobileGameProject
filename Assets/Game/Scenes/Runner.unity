@@ -288,7 +288,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 78875009}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CharacterParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1123,6 +1123,7 @@ GameObject:
   m_Component:
   - component: {fileID: 459917916}
   - component: {fileID: 459917917}
+  - component: {fileID: 459917918}
   m_Layer: 0
   m_Name: MapTileManager
   m_TagString: Untagged
@@ -1158,6 +1159,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_isDontDestroyOnLoad: 0
+  m_navMeshSurface: {fileID: 459917918}
+  m_minTileCount: 16
+--- !u!114 &459917918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 459917915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 63
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 0}
+  m_BuildHeightMesh: 0
 --- !u!1 &482628187
 GameObject:
   m_ObjectHideFlags: 0
@@ -1905,7 +1940,7 @@ GameObject:
   - component: {fileID: 1466713639}
   - component: {fileID: 1466713638}
   - component: {fileID: 1466713637}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -2019,7 +2054,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 5
+    m_Bits: 77
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -2130,7 +2165,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ui: {fileID: 482628191}
-  m_player: {fileID: 0}
   m_mapTileParent: {fileID: 459917915}
 --- !u!1 &1641120881
 GameObject:
@@ -2499,7 +2533,7 @@ GameObject:
   - component: {fileID: 1781917173}
   - component: {fileID: 1781917177}
   - component: {fileID: 1781917178}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}

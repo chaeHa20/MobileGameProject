@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4837806761939231027}
   - component: {fileID: 2192396254106223642}
   - component: {fileID: 2985588867076810107}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,7 +144,7 @@ GameObject:
   m_Component:
   - component: {fileID: 107177096664278059}
   - component: {fileID: 4524909434928176218}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: MapTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,6 +169,7 @@ Transform:
   - {fileID: 6796267236754144631}
   - {fileID: 1301167822748621861}
   - {fileID: 2519575486599854086}
+  - {fileID: 7325001120192936680}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4524909434928176218
@@ -189,7 +190,7 @@ MonoBehaviour:
   m_left: {fileID: 1301167822748621861}
   m_right: {fileID: 2519575486599854086}
   m_obstacleParent: {fileID: 1606810849401903739}
-  m_monsterSpawnPoints: []
+  m_deadZone: {fileID: 7325001120192936680}
 --- !u!1 &815809252728040114
 GameObject:
   m_ObjectHideFlags: 0
@@ -204,7 +205,7 @@ GameObject:
   - component: {fileID: 9163895633582981384}
   - component: {fileID: 7074805775402212722}
   - component: {fileID: 7178474851819076787}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -338,7 +339,7 @@ GameObject:
   - component: {fileID: 4777796631953714796}
   - component: {fileID: 8922614000006946339}
   - component: {fileID: 262533534490240549}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -470,7 +471,7 @@ GameObject:
   - component: {fileID: 8039221818127669741}
   - component: {fileID: 8285139027059830296}
   - component: {fileID: 665303868322597932}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: MapTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -581,7 +582,7 @@ GameObject:
   - component: {fileID: 153164715734951594}
   - component: {fileID: 9130927248208644211}
   - component: {fileID: 4826530350830992916}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -701,3 +702,34 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 15, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 9}
+--- !u!1 &6309704056753246564
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7325001120192936680}
+  m_Layer: 3
+  m_Name: DeadZonePosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7325001120192936680
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6309704056753246564}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 107177096664278059}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

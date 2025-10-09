@@ -24,6 +24,9 @@ public class MapTile : PoolObject
     [SerializeField] Transform m_right;
     [SerializeField] GameObject m_obstacleParent;
 
+    [Header("DeadZone Transform")]
+    [SerializeField] Transform m_deadZone;
+
     private GameObject m_mapParent;
     private MapObstacles m_obstacle;
     public GameObject obstacleParent => m_obstacleParent;
@@ -33,6 +36,8 @@ public class MapTile : PoolObject
     {
         m_myPosition = position;
         m_mapParent = parent;
+
+        loadDeadZone();
     }
 
     public void spawnMonster(int monsterId)
@@ -55,7 +60,20 @@ public class MapTile : PoolObject
             tile.initialize(targetPosition, m_mapParent);
 
             MapTileManager.instance.addMapTile(targetPosition, tile);
+            MapTileManager.instance.removeFarestTilePoint(m_myPosition);
             loadMapModel(tile, null);
+        });
+    }
+
+
+    public void loadDeadZone() // 타일 맵 상에 사망판정판 생성
+    {
+        if (MapTileManager.instance.isExistDeadZone(m_myPosition))
+            return;
+
+        GamePoolHelper.getInstance().pop<MapTileDeadZone>(eResource.MapTileDeadZone, (deadZone) =>
+        {
+            deadZone.initialize(m_myPosition, m_deadZone);
         });
     }
 
