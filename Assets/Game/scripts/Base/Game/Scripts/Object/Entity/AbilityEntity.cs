@@ -7,11 +7,13 @@ public class AbilityEntityData : EntityData
 
 public class AbilityEntity : Entity
 {
+    private float m_hp = 1.0f;
     private long m_battlePower = 0;
     private LocalAbilities m_abilities = null;
 
     protected LocalAbilities abilities => m_abilities;
     public long battlePower => m_battlePower;
+    public float hp => m_hp;
 
     public override void initialize(EntityData entityData)
     {

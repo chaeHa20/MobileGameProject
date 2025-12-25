@@ -11,7 +11,7 @@ public class LocalProtocolGetQuest : GameLocalProtocol
         
         var res = new Res_GetQuest
         {
-            quest = getQuest(req.type),
+            quest = getQuest(req.questId),
         };
         
         callback(res);

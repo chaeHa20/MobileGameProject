@@ -8,14 +8,12 @@ public class CollectionRow : TableRow
     private eGrade m_grade;
     private int m_spriteId;
     private int m_modelId;
-    private float m_expPerItem;
     
     public int nameId => m_nameId;
     public eCollection mainType => m_mainType;
     public eGrade grade => m_grade;
     public int spriteId => m_spriteId;
     public int modelId => m_modelId;
-    public float expPerItem => m_expPerItem;
     public LocalCollection.CollectionType getType() => new LocalCollection.CollectionType((int)m_mainType, m_grade);
 
     public override void parse(List<string> cells, List<string> dataTypes, ref int i)
@@ -27,7 +25,6 @@ public class CollectionRow : TableRow
         m_grade = (eGrade)toInt(cells, ref i);
         m_spriteId = toInt(cells, ref i);
         m_modelId = toInt(cells, ref i);
-        m_expPerItem = toFloat(cells, dataTypes, ref i);
     }
 
     public bool isType(eCollection mainType, eGrade grade)

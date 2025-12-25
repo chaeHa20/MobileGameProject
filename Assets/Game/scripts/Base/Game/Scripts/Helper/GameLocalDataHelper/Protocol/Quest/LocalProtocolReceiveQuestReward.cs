@@ -9,7 +9,7 @@ public class LocalProtocolReceiveQuestReward : GameLocalProtocol
     {
         var req = _req as Req_ReceiveQuestReward;
 
-        var quest = getQuest(req.questType);
+        var quest = getQuest(req.questId);
         if (null == quest || !quest.isClear() || quest.isGetReward)
         {
             callback(Res_LocalData.createError<Res_ReceiveQuestReward>((int)eLocalProtocolError.QuestWasNotCleared));

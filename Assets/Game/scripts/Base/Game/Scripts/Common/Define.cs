@@ -7,7 +7,10 @@ public class Define
 {
     public const int GOLD_ITEM_ID = 1;
     public const int GEM_ITEM_ID = 2;
-    
+    public const float BASE_SECOND = 1.0f;
+    public const float SCORE_UPDATE_SECOND = 10.0f;
+    public const int ADD_SCORE_PER_PLAYTIME = 2;
+
     public const int SAVE_ONE_HOUR_COOLTIME = 1;
     public const int INTOR_TOON_COUNT = 5;
     public const int PLAYER_MAX_LEVEL = 100;

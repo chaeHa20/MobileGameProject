@@ -16,7 +16,7 @@ public class LocalProtocolUpdateQuest : GameLocalProtocol
         if (questData.IsQuestOpen)
         {
             checkQuest(req.type, req.addValue, ref isUpdate);
-            isClearQuest(req.type, ref isClear);
+            isClearQuest(req.questId, ref isClear);
         }
 
         var res = new Res_UpdateQuest

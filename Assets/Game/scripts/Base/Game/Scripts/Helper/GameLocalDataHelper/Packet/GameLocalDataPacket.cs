@@ -124,6 +124,24 @@ public class Res_AddRewardItems : Res_GameData
     public LocalAddItemResult addItemResult;
 }
 
+public class Req_UpdatePlayScore: Req_LocalData
+{
+    public int addScore;
+    public bool isUpdatePlayTime;
+    public int second;
+
+    public Req_UpdatePlayScore()
+    {
+        m_pid = (int)eLocalProtocol.UpdatePlayScore;
+        m_dataType = eLocalData.Score;
+    }
+}
+
+public class Res_UpdatePlayScore: Res_GameData
+{
+    public BigMoney scoreResult;
+}
+
 public class Req_AddCurrency : Req_LocalData
 {
     public eCurrency currencyType;
@@ -190,7 +208,7 @@ public class Res_GetPlayerInfo : Res_GameData
 
 public class Req_GetQuest : Req_LocalData
 {
-    public eQuestType type;
+    public int questId;
     public Req_GetQuest()
     {
         m_pid = (int)eLocalProtocol.GetQuest;
@@ -205,6 +223,7 @@ public class Res_GetQuest : Res_LocalData
 
 public class Req_UpdateQuest : Req_LocalData
 {
+    public int questId;
     public eQuestType type;
     public int addValue;
 
@@ -337,7 +356,7 @@ public class Res_GetAllTutorials : Res_LocalData
 
 public class Req_ReceiveQuestReward : Req_LocalData
 {
-    public eQuestType questType;
+    public int questId;
 
     public Req_ReceiveQuestReward()
     {
@@ -355,7 +374,7 @@ public class Res_ReceiveQuestReward : Res_GameData
 
 public class Req_ReceiveAllQuestReward : Req_LocalData
 {
-    public List<eQuestType> questTypes;
+    public List<int> questIds;
 
     public Req_ReceiveAllQuestReward()
     {

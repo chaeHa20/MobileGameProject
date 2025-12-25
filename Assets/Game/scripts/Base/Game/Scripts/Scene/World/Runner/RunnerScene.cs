@@ -36,6 +36,8 @@ public class RunnerScene : GameScene
     {
         base.update();
 
+        EntityManager.instance.update(Time.deltaTime);
+
 #if UNITY_EDITOR
         if (null == InputManager.instance)
             return;

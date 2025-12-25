@@ -6,6 +6,7 @@ public enum eLocalData
     Currency,
     Collection,
     Game,
+    Score,
     Ad,
     Player,
     Tutorial,
@@ -21,6 +22,7 @@ public enum eLocalProtocol
     UseCurrency,
     BuyCurrency,
     AddRewardItems,
+    UpdatePlayScore,
     AddCurrency,
     GetAdData,
     GetAllItems,
@@ -58,6 +60,7 @@ public enum eLocalProtocolError
     AlreadyGetReward,
     QuestWasNotCleared,
     NotExistItem,
+    NotExistData,
     isFullShowDailyTicketChargeAd,
     NoMoreRewardToReceived,
 }

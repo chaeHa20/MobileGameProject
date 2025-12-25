@@ -29,8 +29,10 @@ public class MapTile : PoolObject
 
     private GameObject m_mapParent;
     private MapObstacles m_obstacle;
+
     public GameObject obstacleParent => m_obstacleParent;
-    
+    public bool isExistObstacle => null != m_obstacle;
+
 
     public virtual void initialize(Vector2 position, GameObject parent)
     {
@@ -77,7 +79,7 @@ public class MapTile : PoolObject
         });
     }
 
-    protected virtual void loadMapModel(MapTile parent,Action callback) // 타일 맵 상에 오브젝트들 랜덤 생성
+    protected virtual void loadMapModel(MapTile parent, Action callback) // 타일 맵 상에 오브젝트들 랜덤 생성
     {
         var randomIndex = UnityEngine.Random.Range(0, Define.MAX_ObBSTACLE_COUNT);
         GamePoolHelper.getInstance().pop<MapObstacles>(eResource.MapObstacles, randomIndex, (obstacle) =>
@@ -85,6 +87,8 @@ public class MapTile : PoolObject
             GraphicHelper.setParent(parent.obstacleParent, obstacle.gameObject);
 
             m_obstacle = obstacle;
+
+            GameUIHelper.instance.sendMessage((int)eUIMessage.PlayStartCountScore);
             callback?.Invoke();
         });
     }
@@ -135,5 +139,33 @@ public class MapTile : PoolObject
         }
 
         return result;
+    }
+
+    public void spawnMonster(int monsterId, GameObject parent)
+    {
+        if (EntityManager.instance.entityUuidsByEntityType.TryGetValue(eEntity.Monster, out HashSet<long> monsters))
+        {
+            if (MapTileManager.instance.maxMonsterCount < monsters.Count)//(MapTileManager.instance.maxMonsterCount < monsters.Count)
+                return;
+        }
+
+        var spawnPoint = m_obstacle.findMonsterSpawnPoint();
+        var data = new MonsterData
+        {
+            parent = parent,
+            id = monsterId,
+            localUuid = 0,
+            level = 1,
+            abilities = new LocalAbilities(eAbilityOwner.Monster),
+            team = eTeam._2,
+            type = eEntity.Monster,
+            resourceId = (int)eResource.Monster,
+            position = spawnPoint.position,
+            rotation = spawnPoint.rotation,
+        };
+
+        EntityManager.instance.createEntity<Monster>(data, (monster) =>
+        {
+        });
     }
 }

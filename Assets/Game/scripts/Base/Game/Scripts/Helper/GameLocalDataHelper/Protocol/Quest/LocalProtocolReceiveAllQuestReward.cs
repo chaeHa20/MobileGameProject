@@ -12,9 +12,9 @@ public class LocalProtocolReceiveAllQuestReward : GameLocalProtocol
         var currency = new LocalBigMoneyItem();
         List<LocalQuest> quests = new List<LocalQuest>();
 
-        foreach (var questType in req.questTypes)
+        foreach (var questId in req.questIds)
         {
-            var quest = getQuest(questType);
+            var quest = getQuest(questId);
             if (null == quest || !quest.isClear() || quest.isGetReward)
             {
                 callback(Res_LocalData.createError<Res_ReceiveQuestReward>((int)eLocalProtocolError.QuestWasNotCleared));

@@ -1,20 +1,56 @@
-using UnityEngine;
-using Unity.AI.Navigation;
-using UnityHelper;
 using System.Collections.Generic;
+using Unity.AI.Navigation;
+using UnityEngine;
+using UnityHelper;
 
 public class MapTileManager : MonoSingleton<MapTileManager>
 {
     [SerializeField] NavMeshSurface m_navMeshSurface;
+    [SerializeField] GameObject m_monsterSpawnParent;
     [SerializeField] int m_minTileCount = 16;
+    [SerializeField] int m_maxMonsterCount = 16;
+    [SerializeField] float m_monsterSpawnTime = 5.0f;
 
+    private UpdateTimer m_monsterSpawnTimer;
+    private bool m_isStartMonsterSpawn = false;
     private Dictionary<Vector2, MapTile> m_tiles = new Dictionary<Vector2, MapTile>();
     private Dictionary<Vector2, MapTileDeadZone> m_deadZone = new Dictionary<Vector2, MapTileDeadZone>();
 
+    public int maxMonsterCount => m_maxMonsterCount;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        m_isStartMonsterSpawn = false;
+    }
+
+    private void Update()
+    {
+        if (!m_isStartMonsterSpawn)
+            return;
+
+        if (m_monsterSpawnTimer.update(Time.deltaTime))
+        {
+            spawnMonster();
+            initMonsterSpawnTimer();
+        }
+    }
+
     public void buildNavMesh()
     {
-        if(null != m_navMeshSurface)
+        if (null != m_navMeshSurface)
             m_navMeshSurface.BuildNavMesh();
+    }
+
+    public void initMonsterSpawnTimer()
+    {
+        var spawnUpdateTime = m_monsterSpawnTime;// 확장된 맵 상태에 따른 스폰 시간 변동 식 논의 필요
+        if (null == m_monsterSpawnTimer)
+            m_monsterSpawnTimer = new UpdateTimer();
+
+        m_monsterSpawnTimer.initialize(spawnUpdateTime, false);
+
+        m_isStartMonsterSpawn = true;
     }
 
     public bool isExistMapTile(Vector2 myPosition, eMapTile targetType)
@@ -34,7 +70,10 @@ public class MapTileManager : MonoSingleton<MapTileManager>
 
     public void addMapTile(Vector2 targetPos, MapTile tile)
     {
-        if(m_tiles.ContainsKey(targetPos))
+        if (1 == m_tiles.Count)
+            initMonsterSpawnTimer();
+
+        if (m_tiles.ContainsKey(targetPos))
         {
             m_tiles[targetPos].Dispose();
             m_tiles.Remove(targetPos);
@@ -69,7 +108,7 @@ public class MapTileManager : MonoSingleton<MapTileManager>
         {
             var point = e.Current.Key;
             var distance = Vector2.Distance(currentPos, point);
-            if(maxDistance < distance)
+            if (maxDistance < distance)
             {
                 maxDistance = distance;
                 maxDistancePoint = point;
@@ -108,7 +147,7 @@ public class MapTileManager : MonoSingleton<MapTileManager>
                 result = new Vector2(currentPos.x, currentPos.y - 1.0f);
                 break;
             case eMapTile.Left:
-                result = new Vector2(currentPos.x -1.0f, currentPos.y);
+                result = new Vector2(currentPos.x - 1.0f, currentPos.y);
                 break;
             case eMapTile.Rigjt:
                 result = new Vector2(currentPos.x + 1.0f, currentPos.y);
@@ -118,5 +157,57 @@ public class MapTileManager : MonoSingleton<MapTileManager>
         }
 
         return result;
+    }
+
+    private void spawnMonster()
+    {
+        var nearPoint = FindNearestTilePoint();
+        if (m_tiles.ContainsKey(nearPoint))
+            m_tiles[nearPoint].spawnMonster(2, m_monsterSpawnParent);
+    }
+
+    public Vector2 FindNearestTilePoint()
+    {
+        Vector2 currentPos = GameHelper.toVector2(PlayerManager.instance.playerCharacter.position);
+        Vector2 minDistancePoint = FindFarTilePoint(currentPos);
+        var minDistance = float.MaxValue;
+        var e = m_tiles.GetEnumerator();
+        while (e.MoveNext())
+        {
+            var point = e.Current.Key;
+            if (!e.Current.Value.isExistObstacle)
+                continue;
+
+            var distance = Vector2.Distance(currentPos, point);
+            if (distance < minDistance)
+            {
+                minDistance = distance;
+                minDistancePoint = point;
+            }
+        }
+
+        return minDistancePoint;
+    }
+
+    public Vector2 FindFarTilePoint(Vector2 currentPos)
+    {
+        Vector2 maxDistancePoint = currentPos;
+        var maxDistance = 0.0f;
+        var e = m_tiles.GetEnumerator();
+        while (e.MoveNext())
+        {
+            var point = e.Current.Key;
+            if (!e.Current.Value.isExistObstacle)
+                continue;
+
+            var distance = Vector2.Distance(currentPos, point);
+            if (maxDistance < distance)
+            {
+                maxDistance = distance;
+                maxDistancePoint = point;
+            }
+        }
+
+        return maxDistancePoint;
     }
 }

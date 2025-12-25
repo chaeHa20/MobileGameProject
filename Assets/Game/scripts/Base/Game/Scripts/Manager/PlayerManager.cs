@@ -12,6 +12,8 @@ public class PlayerManager : MonoSingleton<PlayerManager>
     private Player m_playerCharacter;
     private Vector3 rot = Vector3.one;
 
+    public Transform playerCharacter => m_playerCharacter.gameObject.transform;
+    public GameObject playerCharacterObject => m_playerCharacter.gameObject;
 
     public void loadPlayerCharacter()
     {

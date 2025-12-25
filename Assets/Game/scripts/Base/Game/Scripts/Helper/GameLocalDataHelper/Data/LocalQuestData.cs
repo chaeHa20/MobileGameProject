@@ -72,17 +72,28 @@ public class LocalQuestData : LocalData
         }
     }
 
-    public LocalQuest fineQuest(eQuestType questType)
+    public List<LocalQuest> fineQuests(eQuestType questType)
     {
+        List<LocalQuest> quests = new List<LocalQuest>();
         foreach (var quest in m_quests)
         {
             if (quest.questType == questType && quest.isAvaliableQuest)
+                quests.Add(quest);
+        }
+
+        return quests;
+    }
+
+    public LocalQuest fineQuests(int questId)
+    {
+        foreach (var quest in m_quests)
+        {
+            if (quest.questId== questId && quest.isAvaliableQuest)
                 return quest;
         }
 
         return null;
     }
-
     public override void setDailyReset()
     {
         base.setDailyReset();

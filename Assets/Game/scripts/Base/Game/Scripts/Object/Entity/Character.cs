@@ -15,6 +15,8 @@ public partial class Character : AbilityEntity
     {
         None,
         Idle,
+        Move,
+        Chase,
         Attacking,
     };
 
@@ -34,6 +36,7 @@ public partial class Character : AbilityEntity
 
     private void Awake()
     {
+        initNavMeshAgent();
     }
 
     public override void initialize(EntityData entityData)

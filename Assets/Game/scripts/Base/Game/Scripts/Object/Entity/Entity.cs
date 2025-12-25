@@ -38,7 +38,7 @@ public class Entity : PoolObject
     public int id => m_id;
     public long uuid => m_uuid;
     public long localUuid => m_localUuid;
-    public float radius => m_model.radius;
+    public float radius => null != m_model ?m_model.radius : 0.1f;
     public float sqrtRadius => m_model.sqrtRadius;
     public eEntity type => m_type;
     public eMotion motion => m_model.motion;

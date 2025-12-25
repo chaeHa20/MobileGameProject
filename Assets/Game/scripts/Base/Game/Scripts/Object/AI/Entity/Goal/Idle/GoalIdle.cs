@@ -26,7 +26,12 @@
         var entity = getEntity<Entity>(entityUuid);
 
         var character = entity as Character;
-        character.addGoal(GoalDefault.create());
+        if (character.type == eEntity.Monster)
+        {
+            character.addGoal(GoalMonster.create(false));
+        }
+        else
+            character.addGoal(GoalDefault.create());
     }
 
     public override void resume(AI id, long entityUuid, ref bool isEnd)

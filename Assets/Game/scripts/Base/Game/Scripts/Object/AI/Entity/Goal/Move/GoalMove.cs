@@ -101,7 +101,6 @@ public class GoalMove : Goal
         base.update(team, dt, ref isEnd);
 
         var character = getEntity<Character>();
-
         updateMove(character, dt, ref isEnd, out bool isArrive);
 
         if (!isEnd)

@@ -1,7 +1,9 @@
+using TMPro;
 using System;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityHelper;
+using System.Collections.Generic;
 
 public class UILobbyMainBottom : UIComponent
 {

@@ -130,6 +130,7 @@ public enum eResource
 {
     None,
     PlayerCharacter = 10,
+    Monster = 11,
     MapTile = 101,
     MapObstacles = 102,
     MapTileDeadZone = 103,
@@ -147,7 +148,8 @@ public enum eResource
 public enum eUIMessage
 {
     None,
-
+    // data
+    PlayStartCountScore,
     // data : Gem
     RefreshGem,
     // TODO : 2024-01-31 update by pms data :
@@ -166,6 +168,8 @@ public enum eUIMessage
     SetRecoveryDailyFreeCount,
     // data : eCurrency, LocalBigMoneyItem
     UpdateCurrency,
+    // data : value
+    UpdateScore,
     // data : 
     UpdateLanguage,
     // data : eTutorial
@@ -269,6 +273,7 @@ public enum eAbilityOwner
     None = 0,
     Player = 1,
     Character = 2,
+    Monster = 3,
 }
 
 public enum eEquipment
@@ -279,20 +284,22 @@ public enum eEquipment
     BluePrint = 10,
 }
 
+public enum eEnemyGrade
+{
+    None = 0,
+    Normal = 1,
+    Enforce = 2,
+    Elite = 3,
+}
+
 
 public enum eGrade
 {
     None = 0,
-    Normal = 1,
-    Rare = 2,
-    Epic = 3,
-    Legendary = 4,
-
-    // 아직 미정인 등급
-    Ultimate = 5,
-    Mythic = 6,
-
-    Unique = 10,
+    C = 1,
+    B = 2,
+    A = 3,
+    S = 4,
 }
 
 public enum eGoal
@@ -302,6 +309,10 @@ public enum eGoal
     PathMove,
     DirectMove,
     Waiting,
+    Monster,
+    Attack,
+    FollowPlayer,
+
 }
 
 public enum eParts
@@ -361,6 +372,7 @@ public enum eMotion
     None = 0,
     Idle = 1,
     Move = 2,
+    Attack = 3,
 }
 
 public enum eNotification
@@ -386,11 +398,32 @@ public enum eQuest
     None,
     Daily = 1,
     Weekly = 2,
+    Permanent =3, // 업적 퀘스튼
+    Unique =4,// 유니크 퀘스트
+ }
+
+public enum eBestScore
+{
+    Daily = 1,
+    Weekly = 2,
+    Permanent = 3,
+}
+
+public enum eQuestDifficulty
+{
+    None,
+    Easy = 1,
+    Medium =2,
+    Hard = 3,
 }
 
 public enum eQuestType
 {
     None,
+    TotlaDistance =1,
+    CollectionCoins =2,
+    KillEnemy =3,
+    NoDamageClear = 4,
 }
 
 

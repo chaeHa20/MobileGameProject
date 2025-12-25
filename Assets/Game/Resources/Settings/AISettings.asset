@@ -20,23 +20,21 @@ MonoBehaviour:
     updateTime: 0.1
   m_defaultGoal:
     updateTime: 0.1
-  m_searchTargetGoal:
-    updateTime: 0.1
   m_followGoal:
     updateTime: 0.1
     sqrtMinFollowTargetDistance: 0.4
+  m_attackGoal:
+    updateTime: 0.1
   m_knockBack:
     updateTime: 0.1
     len: 0.3
     v: 1
   m_moveGoal:
-    cantMoveWaitTimer: 1
+    cantMoveWaitTimer: 3
     outOfTargetSqrtDistance: 3
     outOfTargetUpdateTime: 1
     lookAtTargetSpeedForMove:
       min: 1
       max: 18
-  m_orderingGoal:
-    lookAtTargetSpeedForOrdering: 10
   m_moving:
     m_maxForce: 0.2

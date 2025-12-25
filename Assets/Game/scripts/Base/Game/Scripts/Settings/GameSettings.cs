@@ -77,19 +77,15 @@ public class GameSettings : BaseGameSettings
             public Color Rare = new Color();
             public Color Epic = new Color();
             public Color Legend = new Color();
-            public Color Ultimate = new Color();
-            public Color Mythic = new Color();
 
             public Color getColor(eGrade grade)
             {
                 switch (grade)
                 {
-                    case eGrade.Normal: return Normal;
-                    case eGrade.Rare: return Rare;
-                    case eGrade.Epic: return Epic;
-                    case eGrade.Legendary: return Legend;
-                    case eGrade.Ultimate: return Ultimate;
-                    case eGrade.Mythic: return Mythic;
+                    case eGrade.C: return Normal;
+                    case eGrade.B: return Rare;
+                    case eGrade.A: return Epic;
+                    case eGrade.S: return Legend;
                     default:
                         if (Logx.isActive)
                             Logx.trace("Failed getGradeColor {0}", grade);

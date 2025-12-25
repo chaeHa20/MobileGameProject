@@ -1,14 +1,14 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityHelper;
 
 public partial class Character : AbilityEntity
 {
-    private float m_moveSpeed = 0.0f;
+    private float m_moveSpeed = 1.0f;
     private Vector2 m_targetPosition2 = Vector3.zero;
-    private NavMeshAgent m_navMeshAgent = null;
     private AI m_ai = null;
+
+    protected NavMeshAgent m_navMeshAgent = null;
 
     public float moveSpeed { get => m_moveSpeed; protected set => m_moveSpeed = value; }
     public bool isEnableMove => 0.0f < m_moveSpeed;
@@ -18,6 +18,10 @@ public partial class Character : AbilityEntity
     {
         get { return m_targetPosition2; }
         set { m_targetPosition2 = value; }
+    }
+    private void initNavMeshAgent()
+    {
+        m_navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
     public virtual void updateCharacterMoveSpeed()
@@ -30,9 +34,9 @@ public partial class Character : AbilityEntity
         var speed = moveSpeed * multiplier;
 
         if (speed < GameSettings.instance.work.maxSpeed)
-            m_navMeshAgent.speed= speed;
+            m_navMeshAgent.speed = speed;
         else
-            m_navMeshAgent.speed= GameSettings.instance.work.maxSpeed;
+            m_navMeshAgent.speed = GameSettings.instance.work.maxSpeed;
     }
 
     protected float getAttachedEquipmentMoveAbility()
@@ -99,9 +103,7 @@ public partial class Character : AbilityEntity
         if (null != m_navMeshAgent)
         {
             setEnableNavMesh(true);
-            /// <summary>
-            /// 출처 : https://www.reddit.com/r/Unity3D/comments/9cpim6/objects_not_spawning_properly_with_navmeshagent/
-            /// </summary>
+
             m_navMeshAgent.Warp(position); // TODO : 2024-04-05 by pms            
             stopNavMeshPath(true);
         }
@@ -120,7 +122,7 @@ public partial class Character : AbilityEntity
             return false;
 
         NavMeshPath path = new NavMeshPath();
-        
+
         if (!m_navMeshAgent.CalculatePath(targetPoint.position, path))
         {
             if (Logx.isActive)
@@ -129,6 +131,7 @@ public partial class Character : AbilityEntity
 
         if (NavMeshPathStatus.PathComplete == path.status)
         {
+            UnityEngine.Debug.Log("몬스터 상태 테스트 2");
             stopNavMeshPath(false);
             m_navMeshAgent.SetPath(path);
             return true;

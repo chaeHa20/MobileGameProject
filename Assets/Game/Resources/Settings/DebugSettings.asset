@@ -15,7 +15,7 @@ MonoBehaviour:
   m_isDebug: 0
   m_isSkipTutorial: 0
   m_log:
-    level: 4
+    level: 3
     filter: 
   m_language: 0
   m_gizmo:

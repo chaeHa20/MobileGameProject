@@ -28,12 +28,6 @@ public class LocalCollectionData : LocalData
     }
 
 
-    public LocalCollections<LocalCollection>.AddResult addCollection(CollectionRow collectionRow, long itemCount)
-    {
-        var totalExp = (float)itemCount * collectionRow.expPerItem;
-        return m_collections.add(collectionRow.id, collectionRow.getType(), totalExp);
-    }
-
     public void removeCollection(string uuid)
     {
         if (null != m_collections.find(uuid))

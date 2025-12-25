@@ -7,6 +7,7 @@ public class LocalQuest
     [SerializeField] int m_questId;
     [SerializeField] eQuest m_resetType;
     [SerializeField] eQuestType m_questType;
+    [SerializeField] eQuestDifficulty m_questDifficulty;
     [SerializeField] int m_questValue;
     [SerializeField] int m_curValue;
     [SerializeField] bool m_isShowClearNotification;
@@ -17,6 +18,7 @@ public class LocalQuest
     public int questId => m_questId;
     public eQuest resetType => m_resetType;
     public eQuestType questType => m_questType;
+    public eQuestDifficulty questDifficulty => m_questDifficulty;
     public int questValue => m_questValue;
     public int curValue => m_curValue;
     public bool isShowClearNotification => m_isShowClearNotification;
@@ -26,16 +28,17 @@ public class LocalQuest
     public void initialize(QuestRow questRow, int curValue)
     {
         m_questId = questRow.id;
-        m_questType = (eQuestType)questRow.id;
+        m_questType = questRow.questClearType;
         m_resetType = questRow.resetType;
-        m_questValue = questRow.value;
+        m_questValue = questRow.clearCount;
+        m_questDifficulty = questRow.difficultyType;
         m_curValue = curValue;
         m_isShowClearNotification = true;
         m_isAvaliableQuest = true;
         m_isGetReward = false;
     }
 
-    public void setEndQuiest(QuestRow questRow)
+    public void setEndQuest(QuestRow questRow)
     {
         m_questId = questRow.id;
         m_questType = eQuestType.None;
@@ -47,10 +50,10 @@ public class LocalQuest
         m_isGetReward = true;
     }
 
-    public void check(eQuestType questType, int addValue, ref bool isUpdate)
+    public void check(int questId, int addValue, ref bool isUpdate)
     {
         isUpdate = false;
-        if (m_questType != questType)
+        if (m_questId != questId)
             return;
 
         if (isClear())

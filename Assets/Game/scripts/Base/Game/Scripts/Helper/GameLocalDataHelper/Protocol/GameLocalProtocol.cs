@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Numerics;
 using UnityEngine;
 using UnityHelper;
@@ -124,26 +125,34 @@ public class GameLocalProtocol : LocalDataProtocol
         addItem(itemId, _addValue.value, isDouble, result);
     }
 
-    public void checkQuest(eQuestType questType,int addValue, ref bool isUpdate)
+    public void checkQuest(eQuestType questType, int addValue, ref bool isUpdate)
     {
-        var quest = getQuest(questType);
-        if (null == quest)// TODO : 당일 퀘스트 목록에 있는지 확인
+        var quests = getQuests(questType);
+        if (0 == quests.Count)// TODO : 당일 퀘스트 목록에 있는지 확인
             isUpdate = false;
         else
-            quest.check(questType, addValue, ref isUpdate);
+        {
+            foreach (var quest in quests)
+                quest.check(quest.questId, addValue, ref isUpdate);
+        }
     }
 
-    public void isClearQuest(eQuestType questType, ref bool isClear)
+    public void isClearQuest(int questId, ref bool isClear)
     {
-        var quest = getQuest(questType);
-        if (null == quest)// TODO : 당일 퀘스트 목록에 있는지 확인
+        var quest = getQuest(questId);
+        if (null == quest)
             isClear = false;
         else
             isClear = quest.isClear();
     }
 
-    protected LocalQuest getQuest(eQuestType questType)
+    protected List<LocalQuest> getQuests(eQuestType questType)
     {
-        return getData<LocalQuestData>(eLocalData.Quest).fineQuest(questType);
+        return getData<LocalQuestData>(eLocalData.Quest).fineQuests(questType);
+    }
+
+    protected LocalQuest getQuest(int questId)
+    {
+        return getData<LocalQuestData>(eLocalData.Quest).fineQuests(questId);
     }
 }

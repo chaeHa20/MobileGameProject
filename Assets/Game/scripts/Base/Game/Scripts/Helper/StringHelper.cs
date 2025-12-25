@@ -29,12 +29,10 @@ namespace UnityHelper
             string code = null;
             switch (grade)
             {
-                case eGrade.Normal: code = "grade_normal"; break;
-                case eGrade.Rare: code = "grade_rare"; break;
-                case eGrade.Epic: code = "grade_epic"; break;
-                case eGrade.Legendary: code = "grade_legend"; break;
-                case eGrade.Ultimate: code = "grade_ultimate"; break;
-                case eGrade.Mythic: code = "grade_myth"; break;
+                case eGrade.C: code = "grade_normal"; break;
+                case eGrade.B: code = "grade_rare"; break;
+                case eGrade.A: code = "grade_epic"; break;
+                case eGrade.S: code = "grade_legend"; break;
             }
 
             return get(code);

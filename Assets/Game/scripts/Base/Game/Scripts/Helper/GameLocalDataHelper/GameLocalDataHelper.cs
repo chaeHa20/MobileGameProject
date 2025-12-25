@@ -25,6 +25,7 @@ public class GameLocalDataHelper : LocalDataHelper
         addData<LocalGameData>(eLocalData.Game.ToString(), 0);
         addData<LocalQuestData>(eLocalData.Quest.ToString(), 0);
         addData<LocalTutorialData>(eLocalData.Tutorial.ToString(), 0);
+        addData<LocalScoreData>(eLocalData.Score.ToString(), 0);
 
         addData<LocalPlayerData>(eLocalData.Player.ToString(), 0);
         addData<LocalCurrencyData>(eLocalData.Currency.ToString(), 0);
@@ -56,6 +57,7 @@ public class GameLocalDataHelper : LocalDataHelper
         addProtocol<LocalProtocolUseCurrency>((int)eLocalProtocol.UseCurrency, true); ;
         addProtocol<LocalProtocolSetGameOption>((int)eLocalProtocol.SetGameOption, true);
         addProtocol<LocalProtocolAddRewardItems>((int)eLocalProtocol.AddRewardItems, true);
+        addProtocol<LocalProtocolUpdateScore>((int)eLocalProtocol.UpdatePlayScore, true);
         addProtocol<LocalProtocolCompleteTutorial>((int)eLocalProtocol.CompleteTutorial, true);
         addProtocol<LocalProtocolSetSocialId>((int)eLocalProtocol.SetSocialId, true);
         addProtocol<LocalProtocolUpdateQuest>((int)eLocalProtocol.UpdateQuest, true);

@@ -1,9 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityHelper;
-
-public class GoalDefault : Goal 
+﻿public class GoalDefault : Goal
 {
 
     public static GoalDefault create()
